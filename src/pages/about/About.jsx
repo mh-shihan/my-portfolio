@@ -1,11 +1,11 @@
 import Container from "../../shared/Container";
 
-const Home = () => {
+const About = () => {
   return (
     <Container>
-      <div>This is Home page</div>
+      <div>This is About Page</div>
     </Container>
   );
 };
 
-export default Home;
+export default About;
