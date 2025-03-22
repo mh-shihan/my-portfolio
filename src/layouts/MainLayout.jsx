@@ -3,9 +3,11 @@ import Navbar from "../common/Navbar";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-b from-zinc-950 to-zinc-900/0 interFont">
       <Navbar></Navbar>
-      <Outlet></Outlet>
+      <div className="max-w-7xl mx-auto h-[100vh]">
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
