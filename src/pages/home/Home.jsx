@@ -1,11 +1,12 @@
-import Container from "../../shared/Container";
+import About from "./About";
 import Banner from "./Banner";
 
 const Home = () => {
   return (
-    <Container>
+    <div className="pt-24 max-w-[2520px] mx-auto px-0 md:px-6 xl:px-20">
       <Banner></Banner>
-    </Container>
+      <About></About>
+    </div>
   );
 };
 

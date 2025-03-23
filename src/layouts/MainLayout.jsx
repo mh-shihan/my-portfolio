@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../common/Navbar";
+import Footer from "../common/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="bg-gradient-to-b from-zinc-950 to-zinc-900/0 interFont">
+    <div className="bg-zinc-950 interFont">
       <Navbar></Navbar>
-      <div className="max-w-7xl mx-auto h-[100vh]">
+      <div className=" ">
         <Outlet></Outlet>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
