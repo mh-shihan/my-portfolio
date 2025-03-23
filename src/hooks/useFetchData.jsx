@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
 const useFetchData = (url, key) => {
+  const axiosPublic = useAxiosPublic();
   const {
     data = [],
     refetch,
@@ -9,7 +10,7 @@ const useFetchData = (url, key) => {
   } = useQuery({
     queryKey: [key],
     queryFn: async () => {
-      const res = await useAxiosPublic.get(url);
+      const res = await axiosPublic.get(url);
       return res.data;
     },
   });

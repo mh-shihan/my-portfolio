@@ -4,7 +4,7 @@ import Footer from "../common/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="bg-zinc-950 interFont">
+    <div className="interFont">
       <Navbar></Navbar>
       <div className=" ">
         <Outlet></Outlet>

@@ -4,7 +4,6 @@ import logo from "../../../public/assets/mhs-logo.png";
 import about from "../../../public/assets/about.jpeg";
 
 const About = () => {
-  console.log(import.meta.env.VITE_PASS);
   return (
     <section id="About">
       <div className="my-5 hidden md:block text-center">
