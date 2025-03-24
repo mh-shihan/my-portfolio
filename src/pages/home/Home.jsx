@@ -1,3 +1,4 @@
+import SelectItem from "../../components/SelectItem";
 import About from "./About";
 import Banner from "./Banner";
 import Technologies from "./Technologies";
@@ -8,6 +9,7 @@ const Home = () => {
       <Banner></Banner>
       <About></About>
       <Technologies></Technologies>
+      <SelectItem></SelectItem>
     </div>
   );
 };
