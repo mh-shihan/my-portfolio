@@ -1,6 +1,6 @@
-import SelectItem from "../../components/SelectItem";
 import About from "./About";
 import Banner from "./Banner";
+import Projects from "./Projects";
 import Technologies from "./Technologies";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
       <Banner></Banner>
       <About></About>
       <Technologies></Technologies>
-      <SelectItem></SelectItem>
+      <Projects></Projects>
     </div>
   );
 };

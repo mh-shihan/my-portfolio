@@ -1,0 +1,22 @@
+[
+  {
+    "title": "TravelizeBD",
+    "img": "https://i.ibb.co.com/0jS9Z0Mx/travelize-bd.png",
+    "description": "TravelizeBD is a tourism package management system designed to simplify booking and managing tours across Bangladesh. Built with React, Tailwind CSS, Firebase, Node.js, Express, and MongoDB, it provides a seamless experience for tourists, admins, and tour guides. Users can explore tour packages, book trips, and access dashboards, while admins and guides manage tours efficiently.",
+    "tags": ["React", "Tailwind", "Node", "Express", "MongoDB"],
+    "key_features": "✅ Tourist Dashboard – Browse and book tours. ✅ Admin Panel – Manage packages and bookings. ✅ Tour Guide Interface – Track tours and clients. ✅ Secure Authentication – Role-based login. ✅ Real-Time Updates – Seamless user communication.",
+    "live_link": "https://travelize-bd.web.app",
+    "client_link": "https://github.com/mh-shihan/travelizebd-client",
+    "server_link": "https://github.com/mh-shihan/travelizebd-server"
+  },
+  {
+    "title": "PatHaven",
+    "img": "https://i.ibb.co.com/ycQqtLpX/pet-haven.png",
+    "description": "Pet Haven is a comprehensive platform for pet care services, offering a seamless experience for users to register, book, and manage pet services. With secure authentication and intuitive service management, Pet Haven ensures a hassle-free experience for pet owners.",
+    "tags": ["React", "Tailwind", "Node", "Express", "MongoDB"],
+    "key_features": "✅ User Authentication – Secure login and registration. ✅ Comprehensive Home Page – Engaging banner, services, and quick navigation. ✅ Private Routes – Access 'My Schedule,' 'Add Service,' and 'Manage Service.' ✅ Service Management – Add, customize, and control pet services. ✅ Seamless Booking – Quick and easy service booking.",
+    "live_link": "https://pet-haven-client.web.app",
+    "client_link": "https://github.com/mh-shihan/pet-haven-client",
+    "server_link": "https://github.com/mh-shihan/pet-haven-server"
+  }
+]

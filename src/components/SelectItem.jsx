@@ -77,7 +77,7 @@ const SelectItem = () => {
               className={`p-2   ${
                 selectedLocations.includes(location)
                   ? "bg-lime-500 cursor-not-allowed"
-                  : "cursor-pointer hover:bg-purple-200"
+                  : "cursor-pointer hover:bg-zinc-500"
               }`}
             >
               {location}
