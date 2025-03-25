@@ -1,6 +1,7 @@
 import { FaArrowRight, FaGithub } from "react-icons/fa6";
 import { IoIosLink } from "react-icons/io";
 import { Link } from "react-router-dom";
+import ProjectDetails from "./ProjectDetails";
 
 const Project = ({ project }) => {
   return (
@@ -19,15 +20,16 @@ const Project = ({ project }) => {
               {project?.title}
             </span>
             <span>
-              {project?._id && (
-                <Link
-                  to={project._id}
-                  className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
-                >
-                  <span className="text-sm text-zinc-800">Details</span>
-                  <FaArrowRight className="text-lg text-zinc-800" />
-                </Link>
-              )}
+              <button
+                onClick={() =>
+                  document.getElementById("my_modal_4").showModal()
+                }
+                className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+              >
+                <span className="text-sm text-zinc-800">Details</span>
+                <FaArrowRight className="text-lg text-zinc-800" />
+              </button>
+              <ProjectDetails project={project}></ProjectDetails>
             </span>
           </h2>
           <p>{project?.description?.slice(0, 100)}...</p>
