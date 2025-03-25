@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import ProjectDetails from "./ProjectDetails";
 
 const Project = ({ project }) => {
+  const handleProjectDetails = (id) => {
+    console.log(id);
+    console.log("Project name", project.title);
+  };
+
   return (
     <div className="px-2" key={project._id}>
       <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
@@ -19,7 +24,7 @@ const Project = ({ project }) => {
             <span className="card-title font-bold text-[#AFD138]">
               {project?.title}
             </span>
-            <span>
+            <span onClick={() => handleProjectDetails(project._id)}>
               <button
                 onClick={() =>
                   document.getElementById("my_modal_4").showModal()

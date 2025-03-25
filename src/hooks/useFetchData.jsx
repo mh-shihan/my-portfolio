@@ -5,6 +5,7 @@ const useFetchData = (url, key) => {
   const axiosPublic = useAxiosPublic();
   const {
     data = [],
+    isLoading,
     refetch,
     isPending,
   } = useQuery({
@@ -14,7 +15,7 @@ const useFetchData = (url, key) => {
       return res.data;
     },
   });
-  return [data, refetch, isPending];
+  return [data, isLoading, refetch, isPending];
 };
 
 export default useFetchData;

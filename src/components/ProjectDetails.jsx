@@ -3,18 +3,18 @@ import SectionTitle from "../shared/SectionTitle";
 
 const ProjectDetails = ({ project }) => {
   return (
-    <div>
-      <dialog id="my_modal_4" className="modal">
+    <div className="">
+      <dialog id="my_modal_4" className="modal ">
         <form method="dialog">
           {/* if there is a button in form, it will close the modal */}
-          <button className="z-20 btn text-white btn-sm btn-circle btn-ghost absolute right-[1%] top-8">
+          <button className="z-20 btn text-white text-xl font-bold btn-sm btn-circle btn-ghost absolute right-[15%] top-8">
             ✕
           </button>
         </form>
-        <div className="modal-box w-11/12 max-w-5xl">
+        <div className="modal-box w-11/12 max-w-5xl text-white bg-zinc-900 opacity-2 shadow-lg shadow-zinc-800">
           <div className="text-center">
             <h2 className="text-4xl font-bold">{project?.title}</h2>
-            <p className="text-sm text-gray-400 mt-2">{project?.subTitle}</p>
+            <p className="text-base text-gray-400 mt-2">{project?.subtitle}</p>
           </div>
 
           {/* Grid Layout for Project Details */}
@@ -36,13 +36,17 @@ const ProjectDetails = ({ project }) => {
               <SectionTitle
                 sectionName={"Short description of this project"}
               ></SectionTitle>
-              <p className="text-justify text-gray-300">{project?.details}</p>
+              <p className="text-justify text-gray-300">
+                {project?.description}
+              </p>
 
               <SectionTitle
                 sectionName={"Key features of this project"}
               ></SectionTitle>
 
-              <p className="text-justify text-gray-300">{project?.features}</p>
+              <p className="text-justify text-gray-300">
+                {project?.key_features}
+              </p>
 
               {/* Tags Section */}
               <div className="flex flex-wrap gap-2">
@@ -60,18 +64,21 @@ const ProjectDetails = ({ project }) => {
               <div className="flex space-x-3">
                 <Link
                   to={project?.live_link}
+                  target="_blank"
                   className="bg-[#AFD138] px-5 py-2 text-black font-semibold rounded-sm "
                 >
                   Live Link
                 </Link>
                 <Link
                   to={project?.client_link}
+                  target="_blank"
                   className="bg-[#AFD138] px-5 py-2 text-black font-semibold rounded-sm"
                 >
                   Client Repo
                 </Link>
                 <Link
                   to={project?.server_link}
+                  target="_blank"
                   className="bg-[#AFD138] px-5 py-2 text-black font-semibold rounded-sm"
                 >
                   Server Repo
@@ -96,13 +103,6 @@ const ProjectDetails = ({ project }) => {
                 </p>
               </div>
             </div>
-          </div>
-          {/* MOdal Action */}
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
           </div>
         </div>
       </dialog>

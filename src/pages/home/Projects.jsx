@@ -12,7 +12,7 @@ const Projects = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
