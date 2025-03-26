@@ -5,7 +5,7 @@ import uploadImage from "../../../utils/uploadImage";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import toast from "react-hot-toast";
 
-const Feedback = () => {
+const UserFeedback = () => {
   const axiosPublic = useAxiosPublic();
 
   const [formData, setFormData] = useState({
@@ -203,4 +203,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default UserFeedback;

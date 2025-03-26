@@ -1,4 +1,4 @@
-import Feedback from "../about/feedback/Feedback";
+import UserFeedback from "../about/user-feedback/UserFeedback";
 import About from "./About";
 import Banner from "./Banner";
 import Projects from "./Projects";
@@ -11,7 +11,7 @@ const Home = () => {
       <About></About>
       <Technologies></Technologies>
       <Projects></Projects>
-      <Feedback></Feedback>
+      <UserFeedback></UserFeedback>
     </div>
   );
 };
