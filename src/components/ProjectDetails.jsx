@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "../shared/SectionTitle";
 
-const ProjectDetails = ({ project }) => {
+const ProjectDetails = ({ project, modalId }) => {
   return (
     <div className="">
-      <dialog id="my_modal_4" className="modal ">
+      <dialog id={modalId} className="modal ">
         <form method="dialog">
           {/* if there is a button in form, it will close the modal */}
           <button className="z-20 btn text-white text-xl font-bold btn-sm btn-circle btn-ghost absolute right-[15%] top-8">
@@ -20,9 +20,9 @@ const ProjectDetails = ({ project }) => {
           {/* Grid Layout for Project Details */}
           <div className="grid grid-cols-1 gap-5 my-10 items-start">
             {/* Left Content (Project Details & Image) */}
-            <div className="max-h-[70vh]">
+            <div className="md:max-h-[70vh]">
               <img
-                className="rounded-lg shadow-md w-full max-h-[70vh] object-cover"
+                className="rounded-lg shadow-md w-full md:max-h-[70vh] object-cover"
                 src={project?.img}
                 alt={project?.title}
               />
@@ -61,7 +61,7 @@ const ProjectDetails = ({ project }) => {
               </div>
 
               {/* Buttons */}
-              <div className="flex space-x-3">
+              <div className="flex space-x-3 text-[12px] md:text-base">
                 <Link
                   to={project?.live_link}
                   target="_blank"
@@ -86,7 +86,7 @@ const ProjectDetails = ({ project }) => {
               </div>
             </div>
             {/* Right Content (Information Panel) */}
-            <div className="bg-zinc-800 p-6 pt-8 rounded-lg shadow-lg md:col-span-4 md:-mt-32">
+            <div className="bg-zinc-800 w-full p-6 pt-8 rounded-lg shadow-lg md:col-span-4 md:-mt-32">
               <h3 className="text-xl font-semibold mt-8 mb-4">Information</h3>
               <div className="space-y-4">
                 <p>

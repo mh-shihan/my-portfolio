@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 import ProjectDetails from "./ProjectDetails";
 
 const Project = ({ project }) => {
-  const handleProjectDetails = (id) => {
-    console.log(id);
-    console.log("Project name", project.title);
-  };
-
+  const modalId = project._id;
   return (
     <div className="px-2" key={project._id}>
       <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
@@ -24,17 +20,18 @@ const Project = ({ project }) => {
             <span className="card-title font-bold text-[#AFD138]">
               {project?.title}
             </span>
-            <span onClick={() => handleProjectDetails(project._id)}>
+            <span>
               <button
-                onClick={() =>
-                  document.getElementById("my_modal_4").showModal()
-                }
+                onClick={() => document.getElementById(modalId).showModal()}
                 className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
               >
                 <span className="text-sm text-zinc-800">Details</span>
                 <FaArrowRight className="text-lg text-zinc-800" />
               </button>
-              <ProjectDetails project={project}></ProjectDetails>
+              <ProjectDetails
+                project={project}
+                modalId={modalId}
+              ></ProjectDetails>
             </span>
           </h2>
           <p>{project?.description?.slice(0, 100)}...</p>
