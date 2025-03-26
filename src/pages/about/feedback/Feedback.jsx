@@ -40,7 +40,7 @@ const Feedback = () => {
       if (res.data.insertedId) {
         setFormData({ name: "", review: "", designation: "" });
         form.reset();
-        toast.success("Successfully Submit.👍");
+        toast.success("Successfully Submit.👍", { id: toastId });
       }
     } catch (err) {
       toast.error(err.message, { id: toastId });
@@ -118,7 +118,7 @@ const Feedback = () => {
                   setFormData({ ...formData, review: e.target.value })
                 }
                 value={formData.review}
-                className="w-full px-4 py-2 border border-gray-300 rounded-none text-zinc-700 focus:outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-none text-zinc-300 focus:outline-none"
                 rows="4"
                 required
               ></textarea>
