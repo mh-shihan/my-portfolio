@@ -4,9 +4,11 @@ import SectionTitle from "../../../shared/SectionTitle";
 import uploadImage from "../../../utils/uploadImage";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import toast from "react-hot-toast";
+import useFetchData from "../../../hooks/useFetchData";
 
 const UserFeedback = () => {
   const axiosPublic = useAxiosPublic();
+  const [, , refetch] = useFetchData("/feedbacks", "feedbacks");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -40,6 +42,7 @@ const UserFeedback = () => {
       if (res.data.insertedId) {
         setFormData({ name: "", review: "", designation: "" });
         form.reset();
+        refetch();
         toast.success("Successfully Submit.👍", { id: toastId });
       }
     } catch (err) {
