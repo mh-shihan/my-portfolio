@@ -19,7 +19,7 @@ const UserFeedback = () => {
 
   const handleFeedbackSubmit = async (e) => {
     e.preventDefault();
-    const toastId = toast.loading("loading...");
+    const toastId = toast.loading("Feedback Sending...");
 
     const form = e.target;
     const imageFile = form.image.files[0];

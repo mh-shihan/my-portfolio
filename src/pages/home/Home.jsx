@@ -1,6 +1,6 @@
-import UserFeedback from "../about/user-feedback/UserFeedback";
 import About from "./About";
 import Banner from "./Banner";
+import Contact from "./Contact";
 import Feedbacks from "./Feedbacks";
 import Projects from "./Projects";
 import Technologies from "./Technologies";
@@ -12,8 +12,8 @@ const Home = () => {
       <About></About>
       <Technologies></Technologies>
       <Projects></Projects>
-      <UserFeedback></UserFeedback>
       <Feedbacks></Feedbacks>
+      <Contact></Contact>
     </div>
   );
 };
