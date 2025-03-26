@@ -8,8 +8,6 @@ import Container from "../../shared/Container";
 
 const Projects = () => {
   const [projects] = useFetchData("/projects", "projects");
-  console.log(projects);
-
   const settings = {
     dots: true,
     infinite: false,
