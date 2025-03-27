@@ -1,4 +1,4 @@
-import logo from "../../public/assets/mhs-logo.png";
+import logo from "../assets/shihan-logo.png";
 const Footer = () => {
   return (
     <div className="bg-zinc-900 mt-10">

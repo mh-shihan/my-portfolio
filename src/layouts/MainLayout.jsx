@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <div className="interFont">
       <Navbar></Navbar>
-      <div className=" ">
+      <div className="pt-16 max-w-[2520px] mx-auto px-0 md:px-6 xl:px-20">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "../../shared/SectionTitle";
-import logo from "../../../public/assets/mhs-logo.png";
-import about from "../../../public/assets/about.jpeg";
+import logo from "../../assets/shihan-logo.png";
+import about from "../../assets/about.jpeg";
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
         <SectionTitle sectionName={"About Me"}></SectionTitle>
       </div>
       <div className="flex flex-col-reverse items-center lg:flex-row">
-        <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg lg:w-1/2 relative">
+        <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg lg:w-1/2 relative text-sm md:text-base">
           <p className="text-justify">
             Hi, I’m Mahmudul Hasan Shihan, a passionate and creative junior web
             developer with a strong foundation in front-end development. I

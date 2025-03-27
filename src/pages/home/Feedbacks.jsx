@@ -12,7 +12,7 @@ import Loader from "../../shared/Loader";
 const Feedbacks = () => {
   const [feedbacks, isLoading] = useFetchData("/feedbacks", "feedbacks");
   return (
-    <div>
+    <div className="mx-4">
       {isLoading && <Loader></Loader>}
       <Container>
         <div className="my-8">

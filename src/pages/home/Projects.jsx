@@ -47,13 +47,13 @@ const Projects = () => {
   return (
     <div>
       <SectionTitle sectionName={"My Portfolios"}></SectionTitle>
-      <Container>
+      <div className="mx-6">
         <Slider {...settings}>
           {projects?.map((project, idx) => (
             <Project project={project} key={idx}></Project>
           ))}
         </Slider>
-      </Container>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,7 @@
 import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import banner from "../../../public/assets/banner.png";
+import banner from "../../assets/banner.png";
 import { TbArrowLoopRight2 } from "react-icons/tb";
 import { FaFacebookSquare } from "react-icons/fa";
-import { ImBehance2 } from "react-icons/im";
 import Marquee from "react-fast-marquee";
 
 const Banner = () => {
@@ -25,7 +24,7 @@ const Banner = () => {
         <h4 className="ml-2 md:ml-8 xl:ml-0 text-xl mb-3 text-white">
           A MERN Stack Developer.
         </h4>
-        <div className="space-x-2 flex justify-center md:block ml-0 md:ml-8 xl:ml-0">
+        <div className="space-x-2 flex justify-center md:block mx-4 ml-2 md:ml-8 xl:ml-0">
           <a
             href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view"
             target="_blank"
@@ -35,7 +34,7 @@ const Banner = () => {
           </a>
           <a
             href="#About"
-            className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
+            className=" btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
           >
             Learn More <TbArrowLoopRight2 className="text-xl" />
           </a>

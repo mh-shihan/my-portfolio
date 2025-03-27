@@ -4,7 +4,7 @@ import { FaDownload } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import logo from "../../public/assets/mhs-logo.png";
+import logo from "../assets/shihan-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
