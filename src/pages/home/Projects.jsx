@@ -4,7 +4,6 @@ import SectionTitle from "../../shared/SectionTitle";
 import Project from "../../components/Project";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Container from "../../shared/Container";
 
 const Projects = () => {
   const [projects] = useFetchData("/projects", "projects");

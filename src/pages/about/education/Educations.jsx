@@ -1,5 +1,11 @@
-import { FaGraduationCap } from "react-icons/fa6";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 import SectionTitle from "../../../shared/SectionTitle";
+import { SchoolIcon, StarIcon, WorkflowIcon } from "lucide-react";
+import EducationCard from "./EducationCard";
 
 const Educations = () => {
   const educationData = [
@@ -32,55 +38,41 @@ const Educations = () => {
     },
   ];
   return (
-    <div>
-      <SectionTitle sectionName={"Education Section"}></SectionTitle>
-      <div className="relative max-w-4xl mx-auto py-12">
-        {/* Timeline line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-pink-500 to-purple-700 transform -translate-x-1/2"></div>
+    <div className="space-y-4">
+      <SectionTitle sectionName={"Eduaction & Qualifications"}></SectionTitle>
+      <VerticalTimeline
+        layout="1-column-left"
+        animate={true}
+        lineColor="rgb(39, 39, 42)"
+      >
+        {/* Vertical Timeline Element */}
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+          date="2011 - present"
+          iconStyle={{ background: "rgb(163, 230, 53)", color: "#fff" }}
+          icon={<WorkflowIcon />}
+        >
+          <h3 className="vertical-timeline-element-title">Creative Director</h3>
+          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+          <p>
+            Creative Direction, User Experience, Visual Design, Project
+            Management, Team Leading
+          </p>
+        </VerticalTimelineElement>
 
-        {educationData.map((edu, index) => (
-          <div key={index} className="relative mb-12 flex items-center">
-            <div
-              className={`w-1/2 p-6 ${
-                index % 2 === 0 ? "pr-12 text-right" : "pl-12 text-left"
-              }`}
-            >
-              <div className="bg-gradient-to-br from-purple-800 to-pink-700 p-6 rounded-2xl shadow-lg text-white">
-                <h3 className="text-xl font-semibold mb-2">{edu.title}</h3>
-                <p className="text-sm mb-1">{edu.institution}</p>
-                <p className="text-xs opacity-80 mb-2">{edu.location}</p>
-                <p className="mb-2">📅 {edu.duration}</p>
-                <p className="mb-2">⭐ CGPA: {edu.cgpa}</p>
-                <div className="mb-2">
-                  <h4 className="font-medium">Achievements:</h4>
-                  <ul className="list-disc ml-4 text-sm">
-                    {edu.achievements.map((ach, i) => (
-                      <li key={i}>{ach}</li>
-                    ))}
-                  </ul>
-                </div>
-                {edu.courses && (
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {edu.courses.map((course, i) => (
-                      <span
-                        key={i}
-                        className="bg-purple-900 px-2 py-1 rounded-full text-xs"
-                      >
-                        {course}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Timeline Dot */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
-              <FaGraduationCap className="text-white text-xs" />
-            </div>
-          </div>
-        ))}
-      </div>
+        {/* Vertical Timeline Element */}
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgb(24, 24, 27)", color: "#ffff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(24, 24, 27)" }}
+          iconStyle={{ background: "rgb(163, 230, 53)", color: "#fff" }}
+          icon={<WorkflowIcon />}
+        >
+          <EducationCard></EducationCard>
+        </VerticalTimelineElement>
+      </VerticalTimeline>
     </div>
   );
 };
