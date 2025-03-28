@@ -6,6 +6,7 @@ import "react-vertical-timeline-component/style.min.css";
 import SectionTitle from "../../../shared/SectionTitle";
 import { SchoolIcon, StarIcon, WorkflowIcon } from "lucide-react";
 import EducationCard from "./EducationCard";
+import { SlGraduation } from "react-icons/sl";
 
 const Educations = () => {
   const educationData = [
@@ -68,7 +69,7 @@ const Educations = () => {
           contentStyle={{ background: "rgb(24, 24, 27)", color: "#ffff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(24, 24, 27)" }}
           iconStyle={{ background: "rgb(163, 230, 53)", color: "#fff" }}
-          icon={<WorkflowIcon />}
+          icon={<SlGraduation />}
         >
           <EducationCard></EducationCard>
         </VerticalTimelineElement>
