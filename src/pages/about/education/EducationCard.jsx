@@ -8,9 +8,7 @@ const EducationCard = () => {
           <span className="text-white text-lg md:text-2xl font-medium">
             Bachelor of Science in Computer Science - (BSC)
           </span>
-          <span className="text-lg text-gray-300 mb-0 lg:mb-4">
-            Uttara University
-          </span>
+          <span className="text-lg text-gray-300">Uttara University</span>
         </h2>
         <div className="flex items-center text-base text-gray-300 mb-2 lg:mb-8">
           <Calendar className="w-4 h-4 mr-1" />

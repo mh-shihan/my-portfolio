@@ -7,37 +7,11 @@ import SectionTitle from "../../../shared/SectionTitle";
 import { SchoolIcon, StarIcon, WorkflowIcon } from "lucide-react";
 import EducationCard from "./EducationCard";
 import { SlGraduation } from "react-icons/sl";
+import useFetchData from "../../../hooks/useFetchData";
 
 const Educations = () => {
-  const educationData = [
-    {
-      title: "Diploma of Computer Science in Engineering",
-      institution: "Sherpur Polytechnic Institute",
-      location: "Sherpur, Bangladesh",
-      duration: "2019 - 2023",
-      cgpa: "3.85/4.00",
-      achievements: [
-        "First Class First Position",
-        "Dean’s List Award for Academic Excellence",
-        "Best Project Award in Final Year",
-      ],
-      courses: [
-        "Data Structures and Algorithms",
-        "Web Development",
-        "Database Management",
-        "Software Engineering",
-        "Artificial Intelligence",
-      ],
-    },
-    {
-      title: "Higher Secondary Certificate (HSC)",
-      institution: "Ideal College",
-      location: "Dhaka, Bangladesh",
-      duration: "2016 - 2018",
-      cgpa: "4.96/5.00",
-      achievements: ["Board Merit List"],
-    },
-  ];
+  const [educations, isLoading] = useFetchData("education.json", "education");
+  console.log(educations);
   return (
     <div className="space-y-4">
       <SectionTitle sectionName={"Eduaction & Qualifications"}></SectionTitle>
