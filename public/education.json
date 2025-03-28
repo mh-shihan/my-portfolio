@@ -1,32 +1,29 @@
 [
   {
-    "education": {
-      "degree": "Bachelor of Science in Computer Science - (BSC)",
-      "university": "Uttara University",
-      "duration": "2022 - 2025",
-      "description": "Currently pursuing my degree in Computer Science, where I'm focusing on software development, web technologies, and database management. I'm passionate about coding and love solving complex problems through technology.",
-      "achievements": [
-        "Organize Web Hackathon From UU Pr0gramming Club",
-        "Organize Programming Contest From UU Pr0gramming Club",
-        "Best Project Award in Software Engineering Course"
-      ],
-      "key_courses": [
-        "Data Structure & Algorithm",
-        "Web Development",
-        "Database Management",
-        "Software Engineering",
-        "Artificial Intelligence"
-      ]
-    }
+    "degree": "Bachelor of Science in Computer Science - (BSC)",
+    "university": "Uttara University",
+    "duration": "2022 - 2025",
+    "description": "Currently pursuing my degree in Computer Science, where I'm focusing on software development, web technologies, and database management. I'm passionate about coding and love solving complex problems through technology.",
+    "achievements": [
+      "Organize Web Hackathon From UU Pr0gramming Club",
+      "Organize Programming Contest From UU Pr0gramming Club",
+      "Best Project Award in Software Engineering Course"
+    ],
+    "key_courses": [
+      "Data Structure & Algorithm",
+      "Web Development",
+      "Database Management",
+      "Software Engineering",
+      "Artificial Intelligence"
+    ]
   },
+
   {
-    "education": {
-      "degree": "Higher Secondary Certificate - (HSC)",
-      "university": "Govt. Science College, Tejgaon, Dhaka",
-      "duration": "2018 - 2020",
-      "description": "Completed my HSC in Science, where I developed a strong foundation in mathematics, physics, chemistry, and computer science. This background helped me build analytical and problem-solving skills that I apply in web development today.",
-      "achievements": ["Board Merit List", "Get Award For my BNCC Performance"],
-      "key_courses": ["Physics", "Chemistry", "Higher Math", "Biology", "ICT"]
-    }
+    "degree": "Higher Secondary Certificate - (HSC)",
+    "university": "Govt. Science College, Tejgaon, Dhaka",
+    "duration": "2018 - 2020",
+    "description": "Completed my HSC in Science, where I developed a strong foundation in mathematics, physics, chemistry, and computer science. This background helped me build analytical and problem-solving skills that I apply in web development today.",
+    "achievements": ["Board Merit List", "Get Award For my BNCC Performance"],
+    "key_courses": ["Physics", "Chemistry", "Higher Math", "Biology", "ICT"]
   }
 ]
