@@ -38,7 +38,7 @@ const Feedbacks = () => {
           >
             {feedbacks?.map((feed) => (
               <SwiperSlide key={feed?._id} className="px-2">
-                <div className="p-6 rounded-lg border-b-2 border-t-2 shadow-lime-400 shadow-sm border-lime-400">
+                <div className="p-6  shadow-zinc-800 shadow-sm">
                   {/* User Info */}
                   <div className="flex gap-4 items-center">
                     <img
