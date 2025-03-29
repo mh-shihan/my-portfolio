@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useFetchData from "../../../hooks/useFetchData";
+import Loader from "../../../shared/Loader";
 
 const Certificates = () => {
   const [certificates, isLoading] = useFetchData(
@@ -63,6 +64,7 @@ const Certificates = () => {
       <SectionTitle
         sectionName={"Professional Certificates & License"}
       ></SectionTitle>
+      {isLoading && <Loader></Loader>}
 
       <Slider {...settings}>
         {certificates?.map((certificate) => (
@@ -72,10 +74,10 @@ const Certificates = () => {
             target="_blank"
           >
             <div className="px-2" key={certificate._id}>
-              <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
-                <figure className="overflow-hidden ">
+              <div className="relative card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2 overflow-hidden ">
+                <figure className="overflow-hidden">
                   <img
-                    className=" group-hover:scale-110 transition rounded-md w-full md:h-[280px]"
+                    className="group-hover:scale-110 transition-transform duration-300 rounded-md w-full md:h-[280px]"
                     src={certificate?.image}
                     alt={certificate?.title}
                   />
@@ -85,6 +87,13 @@ const Certificates = () => {
                     {certificate?.title}
                   </h2>
                   <p>{certificate?.platform}</p>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white text-lg font-semibold">
+                    View Credential
+                  </span>
                 </div>
               </div>
             </div>
