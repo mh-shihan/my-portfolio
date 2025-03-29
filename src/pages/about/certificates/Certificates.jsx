@@ -2,8 +2,14 @@ import SectionTitle from "../../../shared/SectionTitle";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useFetchData from "../../../hooks/useFetchData";
 
 const Certificates = () => {
+  const [certificates, isLoading] = useFetchData(
+    "certificates",
+    "certificates"
+  );
+
   var settings = {
     // dots: true,
     infinite: true,
@@ -60,7 +66,11 @@ const Certificates = () => {
 
       <Slider {...settings}>
         {certificates?.map((certificate) => (
-          <a href={certificate?.credential || ""} target="_blank">
+          <a
+            key={certificate._id}
+            href={certificate?.credential || ""}
+            target="_blank"
+          >
             <div className="px-2" key={certificate._id}>
               <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
                 <figure className="overflow-hidden ">

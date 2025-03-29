@@ -6,7 +6,7 @@ import about from "../../assets/about.jpeg";
 const About = () => {
   return (
     <section id="About">
-      <div className="my-5 hidden md:block text-center">
+      <div className="hidden md:block text-center">
         <SectionTitle sectionName={"About Me"}></SectionTitle>
       </div>
       <div className="flex flex-col-reverse items-center lg:flex-row">

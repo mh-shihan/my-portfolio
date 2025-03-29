@@ -15,9 +15,7 @@ const Feedbacks = () => {
     <div className="mx-4">
       {isLoading && <Loader></Loader>}
       <Container>
-        <div className="my-8">
-          <SectionTitle sectionName={"What People Say"} />
-        </div>
+        <SectionTitle sectionName={"What People Say"} />
 
         <div>
           <Swiper

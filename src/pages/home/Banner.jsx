@@ -1,4 +1,9 @@
-import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import {
+  FaDownload,
+  FaGithub,
+  FaLinkedinIn,
+  FaSquareXTwitter,
+} from "react-icons/fa6";
 import banner from "../../assets/banner.png";
 import { TbArrowLoopRight2 } from "react-icons/tb";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -64,6 +69,11 @@ const Banner = () => {
         <a href="https://github.com/mh-shihan" target="_blank">
           <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
             <FaGithub className="text-xl" />
+          </button>
+        </a>
+        <a href="https://x.com/mh_shihan" target="_blank">
+          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
+            <FaSquareXTwitter className="text-xl" />
           </button>
         </a>
       </div>

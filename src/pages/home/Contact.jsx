@@ -42,7 +42,7 @@ const Contact = () => {
         )
         .then(
           () => {
-            console.log("SUCCESS!");
+            // console.log("SUCCESS!");
             toast.success("Message Send Successfully.👍", { id: toastId });
             setFormData({ name: "", email: "", message: "" });
           },
@@ -56,7 +56,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="mt-20">
+    <div className="mt-8 lg:mt-20">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-center bg-zinc-900 p-6 rounded-md">
           <div className="w-full md:w-1/2 p-6">
