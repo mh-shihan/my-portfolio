@@ -14,7 +14,8 @@ const Educations = () => {
     "education.json",
     "education"
   );
-  console.log(educations);
+  // console.log(educations);
+
   return (
     <div className="space-y-4">
       {isLoading && <Loader></Loader>}
@@ -24,18 +25,17 @@ const Educations = () => {
         animate={true}
         lineColor="rgb(39, 39, 42)"
       >
-        {educations.map((education) => (
-          <>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              contentStyle={{ background: "rgb(24, 24, 27)", color: "#ffff" }}
-              contentArrowStyle={{ borderRight: "7px solid  rgb(24, 24, 27)" }}
-              iconStyle={{ background: "rgb(163, 230, 53)", color: "#fff" }}
-              icon={<SlGraduation />}
-            >
-              <EducationCard education={education}></EducationCard>
-            </VerticalTimelineElement>
-          </>
+        {educations.map((education, idx) => (
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(24, 24, 27)", color: "#ffff" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(24, 24, 27)" }}
+            iconStyle={{ background: "rgb(163, 230, 53)", color: "#fff" }}
+            icon={<SlGraduation />}
+            key={idx}
+          >
+            <EducationCard education={education}></EducationCard>
+          </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
     </div>
