@@ -25,28 +25,32 @@ const UserFeedback = () => {
     const imageFile = form.image.files[0];
     console.log(imageFile);
     const photoURL = await uploadImage(imageFile);
-    const rating = form["rating-2"].value;
-    // console.log(photoURL);
+    if (photoURL) {
+      const rating = form["rating-2"].value;
+      // console.log(photoURL);
 
-    const feedbackInfo = {
-      image: photoURL,
-      name: name.charAt(0).toUpperCase() + name.slice(1),
-      designation,
-      review,
-      rating,
-    };
-    // console.log(feedbackInfo);
+      const feedbackInfo = {
+        image: photoURL,
+        name: name.charAt(0).toUpperCase() + name.slice(1),
+        designation,
+        review,
+        rating,
+      };
+      // console.log(feedbackInfo);
 
-    try {
-      const res = await axiosPublic.post("/feedbacks", feedbackInfo);
-      if (res.data.insertedId) {
-        setFormData({ name: "", review: "", designation: "" });
-        form.reset();
-        refetch();
-        toast.success("Successfully Submit.👍", { id: toastId });
+      try {
+        const res = await axiosPublic.post("/feedbacks", feedbackInfo);
+        if (res.data.insertedId) {
+          setFormData({ name: "", review: "", designation: "" });
+          form.reset();
+          refetch();
+          toast.success("Successfully Submit.👍", { id: toastId });
+        }
+      } catch (err) {
+        toast.error(err.message, { id: toastId });
       }
-    } catch (err) {
-      toast.error(err.message, { id: toastId });
+    } else {
+      toast.error("Ops! Something Went Wrong. Try Again.", { id: toastId });
     }
   };
   return (

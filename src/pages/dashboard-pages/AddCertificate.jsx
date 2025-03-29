@@ -1,15 +1,46 @@
 import { useState } from "react";
+import uploadImage from "../../utils/uploadImage";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const AddCertificate = () => {
+  const axiosPublic = useAxiosPublic();
   const [formData, setFormData] = useState({
     title: "",
     platform: "",
     credential: "",
   });
+  const { title, platform, credential } = formData;
 
   const handleAddCertificate = async (e) => {
     e.preventDefault();
-    alert("Hell9 Certificate");
+    const toastId = toast.loading("Adding Certificate...");
+    const form = e.target;
+    const image = form.image.files[0];
+    const photoURL = await uploadImage(image);
+
+    if (photoURL) {
+      const certificateInfo = {
+        image: photoURL,
+        title,
+        platform,
+        credential,
+      };
+      //   console.log(certificateInfo);
+
+      try {
+        const res = await axiosPublic.post("/certificates", certificateInfo);
+        if (res.data.insertedId) {
+          setFormData({ title: "", platform: "", credential: "" });
+          form.reset();
+          toast.success("Certificate Added Successfully.👍", { id: toastId });
+        }
+      } catch (err) {
+        toast.error(err.message, { id: toastId });
+      }
+    } else {
+      toast.error("Ops! Something Went Wrong, Try again", { id: toastId });
+    }
   };
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white text-gray-700">
@@ -34,7 +65,7 @@ const AddCertificate = () => {
             }
             value={formData.name}
             placeholder="Enter course name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white"
             required
           />
         </div>
@@ -56,17 +87,14 @@ const AddCertificate = () => {
             }
             value={formData.platform}
             placeholder="Enter platform name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white "
             required
           />
         </div>
 
         {/* Image */}
         <div>
-          <label
-            className="block font-medium mb-2 text-gray-700"
-            htmlFor="image"
-          >
+          <label className="block font-medium mb-2 text-white" htmlFor="image">
             Certificate Image
           </label>
           <input
@@ -84,7 +112,7 @@ const AddCertificate = () => {
             htmlFor="credential"
             className="block text-lg font-medium text-gray-700"
           >
-            Platform
+            Credentials
           </label>
           <input
             type="url"
@@ -95,7 +123,7 @@ const AddCertificate = () => {
             }
             value={formData.credential}
             placeholder="Enter credential link"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white"
           />
         </div>
 
@@ -103,7 +131,7 @@ const AddCertificate = () => {
         <div>
           <button
             type="submit"
-            className="w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none "
+            className="w-full px-6 py-3 font-semibold text-zinc-700 hover:text-white bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none "
           >
             Add Certificate
           </button>
