@@ -3,9 +3,11 @@ import AdminMenu from "../menu/AdminMenu";
 import { Link } from "react-router-dom";
 import { AiOutlineBars } from "react-icons/ai";
 import logo from "../../../assets/shihan-logo.png";
+import { useState } from "react";
 
 const Sidebar = () => {
-  const isActive = true;
+  const [isOpen, setIsOpen] = useState(false);
+
   const role = "admin";
   return (
     <div>
@@ -25,8 +27,10 @@ const Sidebar = () => {
           </div>
         </div>
         <button
-          //   onClick={handleToggle}
-          className="mobile-menu-button p-4 focus:outline-none focus:bg-[#7fa712]"
+          onClick={() => setIsOpen(!isOpen)}
+          className={`mobile-menu-button p-4 ${
+            !isOpen && "focus:outline-none focus:bg-[#7fa712]"
+          }`}
         >
           <AiOutlineBars className="h-5 w-5" />
         </button>
@@ -35,7 +39,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-zinc-700 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
-          isActive && "-translate-x-full"
+          isOpen && "-translate-x-full"
         }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
         <div>
