@@ -5,6 +5,7 @@ import AboutPage from "../pages/about/about-page/AboutPage";
 import ErrorPage from "../pages/error/ErrorPage";
 import Login from "../pages/login/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
+import AddProject from "../pages/dashboard-pages/AddProject";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,6 @@ export const router = createBrowserRouter([
     path: "dashboard",
     errorElement: <ErrorPage></ErrorPage>,
     element: <DashboardLayout></DashboardLayout>,
-    children: [],
+    children: [{ path: "add-project", element: <AddProject></AddProject> }],
   },
 ]);

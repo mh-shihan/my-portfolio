@@ -9,20 +9,24 @@ const AdminMenu = () => {
       <MenuItem
         icon={MdAssignmentAdd}
         label="Add Project"
-        address="/dashboard"
+        address="/dashboard/add-project"
       />
       {/* <MenuItem icon={GrArticle} label="Add Feedback" address="addFeedback" /> */}
       <MenuItem
         icon={GrCertificate}
         label="Add Certificate"
-        address="add-certificate"
+        address="/dashboard/add-certificate"
       />
       <MenuItem
         icon={TbDeviceIpadHorizontalCog}
         label="Add Tech"
         address="add-tech"
       />
-      <MenuItem icon={MdMessage} label="All Messages" address="all-messages" />
+      <MenuItem
+        icon={MdMessage}
+        label="All Messages"
+        address="/dashboard/all-messages"
+      />
     </>
   );
 };
