@@ -5,7 +5,8 @@ import AboutPage from "../pages/about/about-page/AboutPage";
 import ErrorPage from "../pages/error/ErrorPage";
 import Login from "../pages/login/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
-import AddProject from "../pages/dashboard-pages/AddProject";
+import AddProject from "../pages/dashboard/AddProject";
+import DashboardHome from "../pages/dashboard/DashboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -18,14 +19,18 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "login",
-    errorElement: <ErrorPage></ErrorPage>,
+    path: "/login",
     element: <Login></Login>,
   },
   {
-    path: "dashboard",
-    errorElement: <ErrorPage></ErrorPage>,
+    path: "/dashboard",
     element: <DashboardLayout></DashboardLayout>,
-    children: [{ path: "add-project", element: <AddProject></AddProject> }],
+    children: [
+      {
+        path: "/dashboard",
+        element: <DashboardHome></DashboardHome>,
+      },
+      { path: "add-project", element: <AddProject></AddProject> },
+    ],
   },
 ]);

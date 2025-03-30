@@ -28,9 +28,7 @@ const Sidebar = () => {
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`mobile-menu-button p-4 ${
-            !isOpen && "focus:outline-none focus:bg-[#7fa712]"
-          }`}
+          className={`mobile-menu-button p-4 ${isOpen && ""}`}
         >
           <AiOutlineBars className="h-5 w-5" />
         </button>

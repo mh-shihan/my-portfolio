@@ -35,7 +35,7 @@ const AddProject = () => {
 
   // console.log(title, liveLink, repoLink, tags, details);
   const tag = tags.split(",").map((tag) => tag.trim());
-  console.log(tag);
+  //   console.log(tag);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,7 +85,7 @@ const AddProject = () => {
     }
   };
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white text-gray-700">
+    <div className="max-w-4xl mx-auto p-6 bg-white">
       <h1 className="text-2xl font-bold mb-6 text-center">Add New Project</h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* project Name */}
