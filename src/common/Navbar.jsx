@@ -92,12 +92,12 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="fixed top-0 left-0 w-full z-40 bg-gradient-to-b from-zinc-950 to-zinc-900/0 ">
+    <nav className="fixed top-0 left-0 w-full z-40 bg-gradient-to-b from-zinc-950 to-zinc-900/0 pt-2">
       <div className=" navbar flex items-center max-w-[2520px] mx-auto px-0 md:px-6 xl:px-20">
         {/* Logo and Navigation for Larger Devices */}
         <div className="navbar-start lg:flex">
           <a href="/" className="text-xl">
-            <img className="w-20 h-16" src={logo} alt="Logo" />
+            <img width="150" height="200" src={logo} alt="Logo" />
           </a>
         </div>
 

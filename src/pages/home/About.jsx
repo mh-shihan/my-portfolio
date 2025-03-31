@@ -10,7 +10,7 @@ const About = () => {
         <SectionTitle sectionName={"About Me"}></SectionTitle>
       </div>
       <div className="flex flex-col-reverse items-center lg:flex-row">
-        <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg lg:w-1/2 relative text-sm md:text-base">
+        <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg lg:w-1/2 relative text-sm md:text-base ">
           <p className="text-justify">
             Hi, I’m Mahmudul Hasan Shihan, a passionate and creative junior web
             developer with a strong foundation in front-end development. I
@@ -48,9 +48,9 @@ const About = () => {
             alt=""
           />
         </div>
-        <div className="lg:w-1/2 ">
+        <div className="w-1/2 lg:pt-6">
           <img
-            className="w-2/3 md:w-2/3 lg:5/6 mx-auto "
+            className="w-2/3 md:w-2/3 lg:5/6 mx-auto  rounded-md"
             src={about}
             alt="Mahmudul Hasan Shihan"
           />

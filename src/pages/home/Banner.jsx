@@ -14,7 +14,7 @@ const Banner = () => {
     <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center sm:pt-10 md:pt-0 ">
       <div className="col-span-12 lg:col-span-5 hidden lg:block">
         <img
-          className=" max-h-96 sm:w-3/4 mx-auto md:w-full pt-10 text-center"
+          className=" max-w-96 max-h-[460px] sm:w-3/4 mx-auto md:w-full text-center rounded-md mt-6"
           src={banner}
           alt="Mahmudul Hasan Shihan Portrait"
         />
