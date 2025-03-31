@@ -5,9 +5,9 @@ const Footer = () => {
       <footer className="max-w-7xl mx-auto footer footer-center bg-zinc-900 text-zinc-50 p-10">
         <aside>
           <a href="/">
-            <img className="w-32 h-32" src={logo} alt="" />
+            <img width="200" height="200" src={logo} alt="" />
           </a>
-          <p className="font-bold -mt-4">
+          <p className="font-bold">
             <span className="text-base">Full stack developer</span>
             <br />
           </p>

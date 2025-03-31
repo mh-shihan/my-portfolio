@@ -16,7 +16,7 @@ const AddProject = () => {
     liveLink: "",
     repoLink: "",
     tags: "",
-    details: "",
+    description: "",
     features: "",
   });
 
@@ -28,12 +28,12 @@ const AddProject = () => {
     client,
     duration,
     subTitle,
-    details,
+    description,
     features,
     developer,
   } = formData;
 
-  // console.log(title, liveLink, repoLink, tags, details);
+  // console.log(title, liveLink, repoLink, tags, description);
   const tag = tags.split(",").map((tag) => tag.trim());
   //   console.log(tag);
 
@@ -56,7 +56,7 @@ const AddProject = () => {
       liveLink,
       repoLink,
       tags,
-      details,
+      description,
       features,
       developer,
     };
@@ -71,7 +71,8 @@ const AddProject = () => {
         duration: "",
         developer: "",
         liveLink: "",
-        repoLink: "",
+        client_link: "",
+        server_link: "",
         tags: "",
         details: "",
         features: "",
@@ -186,7 +187,7 @@ const AddProject = () => {
               type="text"
               id="duration"
               name="duration"
-              placeholder="Enter duration name"
+              placeholder="Enter duration e.g, 10 Days or 1 Month"
               onChange={(e) =>
                 setFormData({ ...formData, duration: e.target.value })
               }
@@ -242,24 +243,44 @@ const AddProject = () => {
               required
             />
           </div>
-
-          {/* Repo Link */}
           <div className="w-full">
             <label
-              htmlFor="repo"
+              htmlFor="client link"
               className="block text-lg font-medium text-gray-700"
             >
-              Github Repository Link
+              Client Link
             </label>
             <input
               type="url"
-              id="repo"
-              name="repo"
-              placeholder="Enter live link"
+              id="client_link"
+              name="client_link"
+              placeholder="Enter client repository link"
               onChange={(e) =>
-                setFormData({ ...formData, repoLink: e.target.value })
+                setFormData({ ...formData, client_link: e.target.value })
               }
-              value={formData.repoLink}
+              value={formData.client_link}
+              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              required
+            />
+          </div>
+
+          {/* Server_link Link */}
+          <div className="w-full">
+            <label
+              htmlFor="server_link"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Server Link
+            </label>
+            <input
+              type="url"
+              id="server_link"
+              name="server_link"
+              placeholder="Enter Server Repository Link"
+              onChange={(e) =>
+                setFormData({ ...formData, server_link: e.target.value })
+              }
+              value={formData.server_link}
               className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
               required
             />
@@ -287,22 +308,22 @@ const AddProject = () => {
           />
         </div>
 
-        {/* Details */}
+        {/* Description */}
         <div>
           <label
-            htmlFor="details"
+            htmlFor="description"
             className="block text-lg font-medium text-gray-700"
           >
-            Details
+            Description
           </label>
           <textarea
-            id="details"
-            name="details"
-            placeholder="Enter project details"
+            id="description"
+            name="description"
+            placeholder="Enter project description"
             onChange={(e) =>
-              setFormData({ ...formData, details: e.target.value })
+              setFormData({ ...formData, description: e.target.value })
             }
-            value={formData.details}
+            value={formData.description}
             className="w-full px-4 pt-2 border border-gray-300 rounded-none focus:outline-none"
             rows="4"
             required
