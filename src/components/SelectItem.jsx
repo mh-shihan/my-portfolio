@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 
@@ -40,6 +40,10 @@ const SelectItem = ({ setTags }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  useEffect(() => {
+    setTags(selectedItems);
+  }, [selectedItems, setTags]);
+
   const toggleSelection = (location) => {
     if (!selectedItems.includes(location)) {
       setSelectedItems([...selectedItems, location]);
@@ -50,7 +54,6 @@ const SelectItem = ({ setTags }) => {
     setSelectedItems(selectedItems.filter((item) => item !== location));
   };
   // console.log(selectedItems);
-  setTags(selectedItems);
 
   return (
     <div className="relative">
