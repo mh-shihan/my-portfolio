@@ -8,6 +8,7 @@ import SelectItem from "../../components/SelectItem";
 const AddProject = () => {
   const axiosPublic = useAxiosPublic();
   const [pending, setPending] = useState(false);
+  const [tags, setTags] = useState([]);
   const [formData, setFormData] = useState({
     title: "",
     subTitle: "",
@@ -16,7 +17,6 @@ const AddProject = () => {
     developer: "",
     liveLink: "",
     repoLink: "",
-    tags: "",
     description: "",
     features: "",
   });
@@ -25,7 +25,6 @@ const AddProject = () => {
     title,
     liveLink,
     repoLink,
-    tags,
     client,
     duration,
     subTitle,
@@ -35,63 +34,68 @@ const AddProject = () => {
   } = formData;
 
   // console.log(title, liveLink, repoLink, tags, description);
-  const tag = tags.split(",").map((tag) => tag.trim());
+  // const tag = tags.split(",").map((tag) => tag.trim());
   //   console.log(tag);
 
-  const handleSubmit = async (e) => {
+  const handleAddProject = async (e) => {
     e.preventDefault();
     setPending(true);
 
+    const toastId = toast.loading("Adding...");
+
     const form = e.target;
     const image = form.image.files[0];
-    const photoURL = await uploadImage(image);
-    console.log(photoURL);
-    const tags = form.tags.value.split(",").map((tag) => tag.trim());
-    // const details = form.details.value;
-    const projectInfo = {
-      imgSrc: photoURL,
-      title,
-      client,
-      duration,
-      subTitle,
-      liveLink,
-      repoLink,
-      tags,
-      description,
-      features,
-      developer,
-    };
-    console.log(projectInfo);
+    // const photoURL = await uploadImage(image);
+    const photoURL = true;
+    if (photoURL) {
+      const projectInfo = {
+        imgSrc: photoURL,
+        title,
+        client,
+        duration,
+        subTitle,
+        liveLink,
+        repoLink,
+        tags,
+        description,
+        features,
+        developer,
+      };
+      console.log(projectInfo);
 
-    try {
-      await axiosPublic.post("/projects", projectInfo);
-      setFormData({
-        title: "",
-        subTitle: "",
-        client: "",
-        duration: "",
-        developer: "",
-        liveLink: "",
-        client_link: "",
-        server_link: "",
-        tags: "",
-        details: "",
-        features: "",
-      });
-      form.reset();
-      toast.success("Successfuly Add.👍");
-      setPending(false);
-    } catch (err) {
-      console.log(err.message);
-      toast.error(err.message);
+      // try {
+      //   const res = await axiosPublic.post("/projects", projectInfo);
+      //   if (res.data.insertedId) {
+      //     setFormData({
+      //       title: "",
+      //       subTitle: "",
+      //       client: "",
+      //       duration: "",
+      //       developer: "",
+      //       liveLink: "",
+      //       client_link: "",
+      //       server_link: "",
+      //       details: "",
+      //       features: "",
+      //     });
+      //     form.reset();
+      //     toast.success("Project Added Successfully.👍", { id: toastId });
+      //     setPending(false);
+      //   }
+      // } catch (err) {
+      //   // console.log(err.message);
+      //   toast.error(err.message, { id: toastId });
+      // }
     }
+    // console.log(photoURL);
+    // const details = form.details.value;
   };
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white">
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-700">
         Add New Project
       </h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleAddProject} className="space-y-6">
         {/* project Name */}
         <div>
           <label
@@ -309,7 +313,7 @@ const AddProject = () => {
             className="input input-bordered w-full rounded-md"
             placeholder="e.g., React, JavaScript, Web Development"
           /> */}
-          <SelectItem></SelectItem>
+          <SelectItem setTags={setTags}></SelectItem>
         </div>
 
         {/* Description */}
