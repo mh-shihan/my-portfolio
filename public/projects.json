@@ -10,7 +10,8 @@
     "client_link": "https://github.com/mh-shihan/travelizebd-client",
     "server_link": "https://github.com/mh-shihan/travelizebd-server",
     "client": "Programming Hero Project",
-    "duration": "10 Days"
+    "duration": "10 Days",
+    "developers": ""
   },
   {
     "title": "PatHaven",
@@ -23,6 +24,7 @@
     "client_link": "https://github.com/mh-shihan/pet-haven-client",
     "server_link": "https://github.com/mh-shihan/pet-haven-server",
     "client": "Self Learning Project",
-    "duration": "8 Days"
+    "duration": "8 Days",
+    "developers": ""
   }
 ]

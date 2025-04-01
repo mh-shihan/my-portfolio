@@ -45,8 +45,7 @@ const AddProject = () => {
 
     const form = e.target;
     const image = form.image.files[0];
-    // const photoURL = await uploadImage(image);
-    const photoURL = true;
+    const photoURL = await uploadImage(image);
     if (photoURL) {
       const projectInfo = {
         imgSrc: photoURL,
@@ -63,29 +62,31 @@ const AddProject = () => {
       };
       console.log(projectInfo);
 
-      // try {
-      //   const res = await axiosPublic.post("/projects", projectInfo);
-      //   if (res.data.insertedId) {
-      //     setFormData({
-      //       title: "",
-      //       subTitle: "",
-      //       client: "",
-      //       duration: "",
-      //       developer: "",
-      //       liveLink: "",
-      //       client_link: "",
-      //       server_link: "",
-      //       details: "",
-      //       features: "",
-      //     });
-      //     form.reset();
-      //     toast.success("Project Added Successfully.👍", { id: toastId });
-      //     setPending(false);
-      //   }
-      // } catch (err) {
-      //   // console.log(err.message);
-      //   toast.error(err.message, { id: toastId });
-      // }
+      try {
+        const res = await axiosPublic.post("/projects", projectInfo);
+        if (res.data.insertedId) {
+          setFormData({
+            title: "",
+            subTitle: "",
+            client: "",
+            duration: "",
+            developer: "",
+            liveLink: "",
+            client_link: "",
+            server_link: "",
+            details: "",
+            features: "",
+          });
+          form.reset();
+          toast.success("Project Added Successfully.👍", { id: toastId });
+          setPending(false);
+        }
+      } catch (err) {
+        // console.log(err.message);
+        toast.error(err.message, { id: toastId });
+      }
+    } else {
+      toast.error("PhotoURL is messing", { id: toastId });
     }
     // console.log(photoURL);
     // const details = form.details.value;
