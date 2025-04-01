@@ -12,7 +12,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const [isAdmin] = useFetchData(`/admin/${user?.email}`, `${user?.email}`);
-  console.log(isAdmin);
+  // console.log(isAdmin);
+
   const links = (
     <>
       <li>
@@ -61,7 +62,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       {/* Dashboard */}
-      {isAdmin && (
+      {isAdmin && user && (
         <li>
           <NavLink
             style={({ isActive, isTransitioning }) => {
@@ -135,7 +136,7 @@ const Navbar = () => {
       </li>
 
       {/* Dashboard */}
-      {isAdmin && (
+      {isAdmin && user && (
         <li>
           <NavLink
             style={({ isActive, isTransitioning }) => {

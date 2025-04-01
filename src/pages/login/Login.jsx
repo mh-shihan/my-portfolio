@@ -2,9 +2,11 @@ import { useContext } from "react";
 import bgImage from "../../assets/shihan-logo-bg.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ const Login = () => {
       if (res.user) {
         toast.success("Login Successfully", { id: toastId });
         form.reset();
+        navigate("/dashboard");
       }
     } catch (error) {
       toast.error(error.message, { id: toastId });

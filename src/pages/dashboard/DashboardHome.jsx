@@ -47,8 +47,10 @@ const DashboardHome = () => {
                     <div className="lg:px-4 py-1">Mahmudul Hasan Shihan</div>
                   </div>
                   <div className="">
-                    <div className="lg:px-4 py-1 font-semibold">Email</div>
-                    <div className="lg:px-4 py-1">{!loading && user.email}</div>
+                    <div className="lg:px-4 py-1 font-semibold ">Email</div>
+                    <div className="lg:px-4 py-1 font-bold">
+                      {!loading && user && user.email}
+                    </div>
                   </div>
                   <div className="pt-2 md:mt-4">
                     <div className="lg:px-4 py-1 font-semibold">Gender</div>
