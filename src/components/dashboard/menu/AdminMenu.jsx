@@ -1,12 +1,12 @@
 import { GrCertificate } from "react-icons/gr";
 import MenuItem from "./MenuItem";
-import { MdAssignmentAdd, MdHome, MdMessage } from "react-icons/md";
+import { MdAssignmentAdd, MdMessage } from "react-icons/md";
 import { TbDeviceIpadHorizontalCog } from "react-icons/tb";
-
+import { CgProfile } from "react-icons/cg";
 const AdminMenu = () => {
   return (
     <>
-      <MenuItem icon={MdHome} label="Admin Home" address="/dashboard" />
+      <MenuItem icon={CgProfile} label="Admin Profile" address="/dashboard" />
       <MenuItem
         icon={MdAssignmentAdd}
         label="Add Project"

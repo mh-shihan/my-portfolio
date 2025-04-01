@@ -3,6 +3,7 @@ import ButtonLoader from "../../shared/ButtonLoader";
 import toast from "react-hot-toast";
 import uploadImage from "../../utils/uploadImage";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SelectItem from "../../components/SelectItem";
 
 const AddProject = () => {
   const axiosPublic = useAxiosPublic();
@@ -87,7 +88,9 @@ const AddProject = () => {
   };
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white">
-      <h1 className="text-2xl font-bold mb-6 text-center">Add New Project</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-700">
+        Add New Project
+      </h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* project Name */}
         <div>
@@ -106,7 +109,7 @@ const AddProject = () => {
             }
             value={formData.title}
             placeholder="Enter project name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none "
             required
           />
         </div>
@@ -128,7 +131,7 @@ const AddProject = () => {
             }
             value={formData.subTitle}
             placeholder="Sub title"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none "
             required
           />
         </div>
@@ -146,7 +149,7 @@ const AddProject = () => {
             id="profileImage"
             name="image"
             accept="image/*"
-            className="file-input file-input-bordered w-full rounded-none"
+            className="file-input file-input-bordered w-full rounded-md"
             required
           />
         </div>
@@ -170,7 +173,7 @@ const AddProject = () => {
                 setFormData({ ...formData, client: e.target.value })
               }
               value={formData.client}
-              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -192,7 +195,7 @@ const AddProject = () => {
                 setFormData({ ...formData, duration: e.target.value })
               }
               value={formData.duration}
-              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -215,7 +218,7 @@ const AddProject = () => {
             }
             value={formData.developer}
             placeholder="Developer or Developers"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none "
             required
           />
         </div>
@@ -239,7 +242,7 @@ const AddProject = () => {
                 setFormData({ ...formData, liveLink: e.target.value })
               }
               value={formData.liveLink}
-              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -259,7 +262,7 @@ const AddProject = () => {
                 setFormData({ ...formData, client_link: e.target.value })
               }
               value={formData.client_link}
-              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -281,7 +284,7 @@ const AddProject = () => {
                 setFormData({ ...formData, server_link: e.target.value })
               }
               value={formData.server_link}
-              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -293,9 +296,9 @@ const AddProject = () => {
             htmlFor="tags"
             className="block font-medium mb-2 text-gray-700"
           >
-            Tags (Comma-separated)
+            Tags
           </label>
-          <input
+          {/* <input
             type="text"
             id="tags"
             name="tags"
@@ -303,9 +306,10 @@ const AddProject = () => {
             // onChange={handleTagsChange}
             onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
             value={formData.tags}
-            className="input input-bordered w-full rounded-none"
+            className="input input-bordered w-full rounded-md"
             placeholder="e.g., React, JavaScript, Web Development"
-          />
+          /> */}
+          <SelectItem></SelectItem>
         </div>
 
         {/* Description */}
@@ -324,7 +328,7 @@ const AddProject = () => {
               setFormData({ ...formData, description: e.target.value })
             }
             value={formData.description}
-            className="w-full px-4 pt-2 border border-gray-300 rounded-none focus:outline-none"
+            className="w-full px-4 pt-2 border border-gray-300 rounded-md focus:outline-none"
             rows="4"
             required
           ></textarea>
@@ -346,7 +350,7 @@ const AddProject = () => {
               setFormData({ ...formData, features: e.target.value })
             }
             value={formData.features}
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
             rows="4"
             required
           ></textarea>
@@ -356,7 +360,7 @@ const AddProject = () => {
         <div>
           <button
             type="submit"
-            className={`w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none ${
+            className={`w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-md hover:bg-[#7fa712] focus:outline-none ${
               pending ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >

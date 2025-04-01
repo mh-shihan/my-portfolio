@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineBars } from "react-icons/ai";
 import logo from "../../../assets/shihan-logo.png";
 import { useState } from "react";
+import { MdHome } from "react-icons/md";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,9 +68,16 @@ const Sidebar = () => {
         <div>
           <hr />
 
+          <Link to="/">
+            <button className="flex w-full items-center px-3 py-2 mt-2 text-zinc-300 hover:bg-[#B9FF00]   hover:text-gray-700 transition-colors duration-300 transform">
+              <MdHome className="w-6 h-6" />
+
+              <span className="mx-4 font-medium">Home</span>
+            </button>
+          </Link>
           <button
             //   onClick={handleLogOut}
-            className="flex w-full items-center px-4 py-2 mt-5 text-zinc-300 hover:bg-[#B9FF00]   hover:text-gray-700 transition-colors duration-300 transform"
+            className="flex w-full items-center px-4 py-2  text-zinc-300 hover:bg-[#B9FF00]   hover:text-gray-700 transition-colors duration-300 transform"
           >
             <GrLogout className="w-5 h-5" />
 

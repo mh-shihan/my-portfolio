@@ -1,13 +1,18 @@
 import { Squash as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaDownload } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import logo from "../assets/shihan-logo.png";
+import useFetchData from "../hooks/useFetchData";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useContext(AuthContext);
+  const [isAdmin] = useFetchData(`/admin/${user?.email}`, `${user?.email}`);
+  console.log(isAdmin);
   const links = (
     <>
       <li>
@@ -40,6 +45,39 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          style={({ isActive, isTransitioning }) => {
+            return {
+              background: isActive ? "transparent" : "",
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#afd138" : "white",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+      </li>
+      {/* Dashboard */}
+      {isAdmin && (
+        <li>
+          <NavLink
+            style={({ isActive, isTransitioning }) => {
+              return {
+                background: isActive ? "transparent" : "",
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "#afd138" : "white",
+                viewTransitionName: isTransitioning ? "slide" : "",
+              };
+            }}
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -78,6 +116,42 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className="hover:text-lime-400"
+          style={({ isActive, isTransitioning }) => {
+            return {
+              background: isActive ? "transparent" : "",
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#afd138" : "white",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          onClick={() => setIsOpen(false)}
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+      </li>
+
+      {/* Dashboard */}
+      {isAdmin && (
+        <li>
+          <NavLink
+            style={({ isActive, isTransitioning }) => {
+              return {
+                background: isActive ? "transparent" : "",
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "#afd138" : "white",
+                viewTransitionName: isTransitioning ? "slide" : "",
+              };
+            }}
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
 
       <li>
         <a

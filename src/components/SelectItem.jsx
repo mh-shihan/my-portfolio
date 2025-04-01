@@ -28,17 +28,17 @@ const SelectItem = () => {
   console.log(selectedLocations);
 
   return (
-    <div className="w-full max-w-lg mx-auto relative">
-      <label className="block text-sm font-medium text-gray-700">
+    <div className="relative">
+      {/* <label className="block text-sm font-medium text-gray-700">
         Preferred Location<span className="text-red-500">*</span>
-      </label>
+      </label> */}
       <div
-        className="mt-1 flex flex-wrap gap-2 items-center   border border-gray-300 rounded-md p-2 cursor-pointer"
+        className="mt-1 flex flex-wrap gap-2 items-center  bg-zinc-950 border border-gray-300 rounded-md p-2 cursor-pointer"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         {selectedLocations.length === 0 && (
           <div className="w-full flex justify-between">
-            <span className="text-gray-500">Select locations...</span>
+            <span className="text-gray-500">Select Tags...</span>
             <span className="pt-1">
               {isDropdownOpen ? (
                 <FaAngleUp className="text-white" />
@@ -76,7 +76,7 @@ const SelectItem = () => {
               onClick={() => toggleSelection(location)}
               className={`p-2   ${
                 selectedLocations.includes(location)
-                  ? "bg-lime-500 cursor-not-allowed"
+                  ? "bg-gray-500 cursor-not-allowed"
                   : "cursor-pointer hover:bg-zinc-500"
               }`}
             >
