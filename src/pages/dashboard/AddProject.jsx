@@ -9,27 +9,30 @@ const AddProject = () => {
   const axiosPublic = useAxiosPublic();
   const [pending, setPending] = useState(false);
   const [tags, setTags] = useState([]);
+
   const [formData, setFormData] = useState({
     title: "",
-    subTitle: "",
+    subtitle: "",
     client: "",
     duration: "",
     developer: "",
-    liveLink: "",
-    repoLink: "",
+    live_link: "",
+    client_link: "",
+    server_link: "",
     description: "",
-    features: "",
+    key_features: "",
   });
 
   const {
     title,
-    liveLink,
-    repoLink,
+    live_link,
+    client_link,
+    server_link,
     client,
     duration,
-    subTitle,
+    subtitle,
     description,
-    features,
+    key_features,
     developer,
   } = formData;
 
@@ -48,16 +51,17 @@ const AddProject = () => {
     const photoURL = await uploadImage(image);
     if (photoURL) {
       const projectInfo = {
-        imgSrc: photoURL,
+        img: photoURL,
         title,
         client,
         duration,
-        subTitle,
-        liveLink,
-        repoLink,
+        subtitle,
+        live_link,
+        client_link,
+        server_link,
         tags,
         description,
-        features,
+        key_features,
         developer,
       };
       console.log(projectInfo);
@@ -71,12 +75,13 @@ const AddProject = () => {
             client: "",
             duration: "",
             developer: "",
-            liveLink: "",
+            live_link: "",
             client_link: "",
             server_link: "",
-            details: "",
-            features: "",
+            description: "",
+            key_features: "",
           });
+          setTags([]);
           form.reset();
           toast.success("Project Added Successfully.👍", { id: toastId });
           setPending(false);
@@ -241,12 +246,12 @@ const AddProject = () => {
             <input
               type="url"
               id="live"
-              name="live"
+              name="live_link"
               placeholder="Enter live link"
               onChange={(e) =>
-                setFormData({ ...formData, liveLink: e.target.value })
+                setFormData({ ...formData, live_link: e.target.value })
               }
-              value={formData.liveLink}
+              value={formData.live_link}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />

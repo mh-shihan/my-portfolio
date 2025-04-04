@@ -5,6 +5,7 @@ import ProjectDetails from "./ProjectDetails";
 
 const Project = ({ project }) => {
   const modalId = project._id;
+  // let tagsLength = 0;
   return (
     <div className="px-2" key={project._id}>
       <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
@@ -23,9 +24,9 @@ const Project = ({ project }) => {
             <span>
               <button
                 onClick={() => document.getElementById(modalId).showModal()}
-                className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+                className="bg-[#AFD138] border-none hover:bg-[#99b825] flex px-1 py-1 items-center justify-center rounded-md "
               >
-                <span className="text-sm text-zinc-800">Details</span>
+                <span className="text-sm font-bold text-zinc-800">Details</span>
                 <FaArrowRight className="text-lg text-zinc-800" />
               </button>
               <ProjectDetails
@@ -45,6 +46,9 @@ const Project = ({ project }) => {
               </div>
             ))}
           </div>
+          {/* {project?.tags?.length < 5 && (
+            <div className="badge bg-transparent w-full"></div>
+          )} */}
           <div className="text-right  flex  justify-center gap-2 md:gap-0 md:justify-between">
             <span>
               {project?.live_link && (

@@ -44,16 +44,16 @@ const SelectItem = ({ setTags }) => {
     setTags(selectedItems);
   }, [selectedItems, setTags]);
 
-  const toggleSelection = (location) => {
-    if (!selectedItems.includes(location)) {
-      setSelectedItems([...selectedItems, location]);
+  const toggleSelection = (item) => {
+    if (!selectedItems.includes(item)) {
+      setSelectedItems([...selectedItems, item]);
     }
   };
 
-  const removeSelection = (location) => {
-    setSelectedItems(selectedItems.filter((item) => item !== location));
+  const removeSelection = (removedItem) => {
+    setSelectedItems(selectedItems.filter((item) => item !== removedItem));
   };
-  // console.log(selectedItems);
+  console.log(selectedItems);
 
   return (
     <div className="relative">
@@ -64,7 +64,7 @@ const SelectItem = ({ setTags }) => {
         className="mt-1 flex flex-wrap gap-2 items-center  bg-zinc-950 border border-gray-300 rounded-md p-2 cursor-pointer"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        {selectedItems.length === 0 && (
+        {selectedItems?.length === 0 && (
           <div className="w-full flex justify-between">
             <span className="text-gray-500">Select Tags...</span>
             <span className="pt-1">
