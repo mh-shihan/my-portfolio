@@ -1,15 +1,39 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const AddTech = () => {
+  const axiosPublic = useAxiosPublic();
   const [formData, setFormData] = useState({
     technology: "",
     description: "",
+    photo_url: "",
   });
+
+  const { technology, description, photo_url } = formData;
 
   const handleAddTech = async (e) => {
     e.preventDefault();
-    console.log("Add Tech");
+    const form = e.target;
+    const toastId = toast.loading("Adding New Technology...");
+    const techInfo = {
+      technology,
+      description,
+      img: photo_url,
+    };
+
+    try {
+      const res = await axiosPublic.post("/technologies", techInfo);
+      if (res.data.insertedId) {
+        toast.success("New Technology Added Successfully.👍", { id: toastId });
+        setFormData({ technology: "", description: "", photo_url: "" });
+        form.reset();
+      }
+    } catch (err) {
+      toast.error(err.message, { id: toastId });
+    }
   };
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white text-gray-700">
       <h1 className="text-2xl font-bold mb-6 text-center">
@@ -22,17 +46,17 @@ const AddTech = () => {
             htmlFor="name"
             className="block text-lg font-medium text-gray-700"
           >
-            Title
+            Technology Name
           </label>
           <input
             type="text"
             id="title"
             name="title"
             onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
+              setFormData({ ...formData, technology: e.target.value })
             }
-            value={formData.name}
-            placeholder="Enter course name"
+            value={formData.technology}
+            placeholder="Enter Tech Name"
             className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white"
             required
           />
@@ -44,33 +68,40 @@ const AddTech = () => {
             htmlFor="name"
             className="block text-lg font-medium text-gray-700"
           >
-            Platform
+            Description
           </label>
           <input
             type="text"
-            id="platform"
-            name="platform"
+            id="description"
+            name="description"
             onChange={(e) =>
-              setFormData({ ...formData, platform: e.target.value })
+              setFormData({ ...formData, description: e.target.value })
             }
-            value={formData.platform}
-            placeholder="Enter platform name"
+            value={formData.description}
+            placeholder="Enter Tech use case, e.g User Interface, Framework, Library etc"
             className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white "
             required
           />
         </div>
-
-        {/* Image */}
+        {/* Photo Url */}
         <div>
-          <label className="block font-medium mb-2 text-white" htmlFor="image">
-            Certificate Image
+          <label
+            htmlFor="name"
+            className="block text-lg font-medium text-gray-700"
+          >
+            Photo URL
           </label>
           <input
-            type="file"
-            id="profileImage"
-            name="image"
-            accept="image/*"
-            className="file-input file-input-bordered w-full rounded-none"
+            type="url"
+            id="photo_url"
+            name="photo_url"
+            onChange={(e) =>
+              setFormData({ ...formData, photo_url: e.target.value })
+            }
+            value={formData.photo_url}
+            placeholder="Enter Tech use case, e.g User Interface, Framework, Library etc"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white "
+            required
           />
         </div>
 
