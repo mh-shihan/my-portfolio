@@ -26,7 +26,7 @@ const AdminMenu = () => {
       <MenuItem
         icon={MdMessage}
         label="All Messages"
-        address="/dashboard/all-messages"
+        address="/dashboard/messages"
       />
     </>
   );

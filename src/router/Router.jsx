@@ -9,6 +9,7 @@ import AddProject from "../pages/dashboard/AddProject";
 import DashboardHome from "../pages/dashboard/DashboardHome";
 import AddCertificate from "../pages/dashboard/AddCertificate";
 import AddTech from "../pages/dashboard/AddTech";
+import Messages from "../pages/dashboard/Messages";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
       { path: "add-project", element: <AddProject></AddProject> },
       { path: "add-certificate", element: <AddCertificate></AddCertificate> },
       { path: "add-tech", element: <AddTech></AddTech> },
+      { path: "messages", element: <Messages></Messages> },
     ],
   },
 ]);
