@@ -1,13 +1,51 @@
 import { MdDeleteForever } from "react-icons/md";
 import useFetchData from "../../hooks/useFetchData";
 import Loader from "../../shared/Loader";
+import toast from "react-hot-toast";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Messages = () => {
-  const [messages, isLoading] = useFetchData("/messages", "messages");
+  const axiosPublic = useAxiosPublic();
+  const [messages, isLoading, refetch] = useFetchData("/messages", "messages");
+
+  const handleDelete = async (id) => {
+    const toastId = toast.loading("Deleting Messages...");
+    try {
+      await axiosPublic.delete(`/messages/${id}`);
+      refetch();
+      toast.success("Message Deleted Successfully .👍", { id: toastId });
+    } catch (err) {
+      toast.error(err.message, { id: toastId });
+    }
+  };
 
   const handleModernDelete = (id) => {
-    console.log(id);
+    toast((t) => (
+      <div className=" flex flex-col justify-center items-center p-4">
+        <p className="text-center mb-2">
+          Are you <b>sure?</b>
+        </p>
+        <div className="gap-2 flex">
+          <button
+            className="bg-red-400 text-white px-3 py-1 rounded-md"
+            onClick={() => {
+              toast.dismiss(t.id);
+              handleDelete(id);
+            }}
+          >
+            Yes
+          </button>
+          <button
+            className="bg-green-400 text-white px-3 py-1 rounded-md"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    ));
   };
+
   return (
     <div>
       <div className="text-center my-10"></div>
