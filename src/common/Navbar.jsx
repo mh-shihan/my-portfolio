@@ -13,7 +13,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const { isAdmin, adminLoading } = useAdmin();
-  console.log("From Navbar", isAdmin);
 
   const links = (
     <>

@@ -2,11 +2,13 @@ import { useContext } from "react";
 import bgImage from "../../assets/shihan-logo-bg.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log("From Login Page---->", location);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,7 +22,9 @@ const Login = () => {
       if (res.user) {
         toast.success("Login Successfully", { id: toastId });
         form.reset();
-        navigate("/dashboard");
+        navigate(location?.state?.from ? location?.state?.from : "/", {
+          replace: true,
+        });
       }
     } catch (error) {
       toast.error(error.message, { id: toastId });
