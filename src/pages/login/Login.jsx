@@ -3,7 +3,8 @@ import bgImage from "../../assets/shihan-logo-bg.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 const Login = () => {
   const { signIn, resetPassword } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -89,17 +91,23 @@ const Login = () => {
               </div>
 
               {/* Password */}
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text text-zinc-200">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="********"
                   className="input bg-zinc-700 rounded-none"
                   required
                 />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute bottom-4 right-3 text-xl cursor-pointer"
+                >
+                  {showPassword ? <IoIosEyeOff /> : <IoIosEye />}
+                </span>
               </div>
 
               {/* Submit Button */}
