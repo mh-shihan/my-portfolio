@@ -1,13 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import bgImage from "../../assets/shihan-logo-bg.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, resetPassword } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -27,6 +31,23 @@ const Login = () => {
       }
     } catch (error) {
       toast.error(error.message, { id: toastId });
+    }
+  };
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    setError("");
+
+    if (!email) {
+      setError("Write your email first");
+    } else {
+      try {
+        await resetPassword(email);
+        setMessage("Password reset email sent. Check your inbox.");
+      } catch (err) {
+        setError(err.message);
+      }
     }
   };
 
@@ -62,6 +83,7 @@ const Login = () => {
                   name="email"
                   placeholder="email"
                   className="input w-full rounded-none bg-zinc-700"
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -84,17 +106,19 @@ const Login = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-[#b9ff00] hover:bg-[#d9ff00] w-full rounded-none py-3 text-zinc-800 font-semibold"
+                  className="bg-[#b9ff00] hover:bg-[#d9ff00] w-full rounded-none py-3 text-zinc-800  font-semibold"
                 >
                   Login
                 </button>
               </div>
+              <p className="text-right text-sm hover:underline hover:text-blue-400 text-blue-300">
+                <a className="" href="" onClick={handleResetPassword}>
+                  Forget Password
+                </a>
+              </p>
             </form>
-            <p className="text-right text-sm mt-2 hover:underline hover:text-blue-400 text-blue-300">
-              <a className="" href="">
-                Forget Password
-              </a>
-            </p>
+            {message && <p className="text-white ">{message}</p>}
+            {error && <p className="text-red-600 ">{error}</p>}
           </div>
         </div>
       </div>
