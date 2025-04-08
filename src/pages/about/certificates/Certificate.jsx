@@ -5,8 +5,8 @@ const Certificate = ({ certificate }) => {
       href={certificate?.credential || ""}
       target="_blank"
     >
-      <div className="px-2" key={certificate._id}>
-        <div className="relative card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2 overflow-hidden ">
+      <div className="px-2 " key={certificate._id}>
+        <div className="relative card card-compact h-[400px] bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2 overflow-hidden ">
           <figure className="overflow-hidden">
             <img
               className="group-hover:scale-110 transition-transform duration-300 rounded-md w-full md:h-[280px]"

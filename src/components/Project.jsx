@@ -46,9 +46,9 @@ const Project = ({ project }) => {
               </div>
             ))}
           </div>
-          {/* {project?.tags?.length < 5 && (
+          {project?.tags?.length < 5 && (
             <div className="badge bg-transparent w-full"></div>
-          )} */}
+          )}
           <div className="text-right  flex  justify-center gap-2 md:gap-0 md:justify-between">
             <span>
               {project?.live_link && (
