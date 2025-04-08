@@ -8,7 +8,6 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("From Login Page---->", location);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,7 +21,7 @@ const Login = () => {
       if (res.user) {
         toast.success("Login Successfully", { id: toastId });
         form.reset();
-        navigate(location?.state?.from ? location?.state?.from : "/", {
+        navigate(location?.state?.from ? location?.state?.from : "/dashboard", {
           replace: true,
         });
       }
