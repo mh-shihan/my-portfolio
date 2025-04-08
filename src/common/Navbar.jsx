@@ -5,13 +5,14 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import logo from "../assets/shihan-logo.png";
-import useFetchData from "../hooks/useFetchData";
 import { AuthContext } from "../providers/AuthProvider";
+import useAdmin from "../hooks/useAdmin";
+import Loader from "../shared/Loader";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
-  const [isAdmin] = useFetchData(`/admin/${user?.email}`, `${user?.email}`);
+  const { isAdmin, adminLoading } = useAdmin();
   // console.log(isAdmin);
 
   const links = (
@@ -62,6 +63,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       {/* Dashboard */}
+      {adminLoading && <Loader />}
       {isAdmin && user && (
         <li>
           <NavLink
@@ -136,6 +138,7 @@ const Navbar = () => {
       </li>
 
       {/* Dashboard */}
+      {adminLoading && <Loader />}
       {isAdmin && user && (
         <li>
           <NavLink
