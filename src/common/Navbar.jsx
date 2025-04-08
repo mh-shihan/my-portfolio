@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const { isAdmin, adminLoading } = useAdmin();
-  // console.log(isAdmin);
+  console.log("From Navbar", isAdmin);
 
   const links = (
     <>
@@ -64,7 +64,7 @@ const Navbar = () => {
       </li>
       {/* Dashboard */}
       {adminLoading && <Loader />}
-      {isAdmin && user && (
+      {isAdmin?.admin && user && (
         <li>
           <NavLink
             style={({ isActive, isTransitioning }) => {
@@ -139,7 +139,7 @@ const Navbar = () => {
 
       {/* Dashboard */}
       {adminLoading && <Loader />}
-      {isAdmin && user && (
+      {isAdmin?.admin && user && (
         <li>
           <NavLink
             style={({ isActive, isTransitioning }) => {

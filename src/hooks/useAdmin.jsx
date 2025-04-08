@@ -1,13 +1,12 @@
-import { createContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
 import useAxiosPublic from "./useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "./useAuth";
 
 const useAdmin = () => {
-  const { user, loading } = createContext(AuthContext);
+  const { user, loading } = useAuth();
   const axiosPublic = useAxiosPublic();
 
-  const { data: isAdmin = false, isLoading: adminLoading } = useQuery({
+  const { data: isAdmin, isLoading: adminLoading } = useQuery({
     queryKey: ["admin", user?.email],
     enabled: !loading,
     queryFn: async () => {
@@ -15,6 +14,7 @@ const useAdmin = () => {
       return res.data;
     },
   });
+  //   console.log(isAdmin, adminLoading);
   return { isAdmin, adminLoading };
 };
 

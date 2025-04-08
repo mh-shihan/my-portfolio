@@ -10,6 +10,7 @@ import DashboardHome from "../pages/dashboard/DashboardHome";
 import AddCertificate from "../pages/dashboard/AddCertificate";
 import AddTech from "../pages/dashboard/AddTech";
 import Messages from "../pages/dashboard/Messages";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,12 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <AdminRoute>
+        {" "}
+        <DashboardLayout></DashboardLayout>
+      </AdminRoute>
+    ),
     children: [
       {
         path: "/dashboard",
