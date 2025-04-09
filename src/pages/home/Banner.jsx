@@ -8,8 +8,11 @@ import banner from "../../assets/banner.png";
 import { TbArrowLoopRight2 } from "react-icons/tb";
 import { FaFacebookSquare } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
+import useFetchResume from "../../hooks/useFetchResume";
 
 const Banner = () => {
+  const { resume_url } = useFetchResume();
+  console.log(resume_url);
   return (
     <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center sm:pt-10 md:pt-0 ">
       <div className="col-span-12 lg:col-span-5 hidden lg:block">
@@ -31,7 +34,7 @@ const Banner = () => {
         </h4>
         <div className="space-x-2 flex justify-center md:block mx-4 ml-2 md:ml-8 xl:ml-0">
           <a
-            href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view"
+            href={`${resume_url}`}
             target="_blank"
             className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
           >
