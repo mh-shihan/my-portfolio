@@ -53,15 +53,9 @@ const AboutMe = () => {
                 for back-end solutions.
               </p>
               <p className="mt-4 text-gray-300 text-justify leading-relaxed">
-                Additionally, my{" "}
-                <span className="bg-[#829a2c] font-bold">
-                  graphic design background
-                </span>{" "}
-                played a crucial role in shaping my UI/UX skills, allowing me to
-                merge design with functionality seamlessly. Currently, I am
-                pursuing a Bachelor’s degree in Computer Science, which helps me
-                deepen my understanding of algorithms, data structures, and
-                software development principles.
+                Currently, I am pursuing a Bachelor’s degree in Computer
+                Science, which helps me deepen my understanding of algorithms,
+                data structures, and software development principles.
               </p>
 
               {/* Social Links */}

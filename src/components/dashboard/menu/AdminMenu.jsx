@@ -3,6 +3,7 @@ import MenuItem from "./MenuItem";
 import { MdAssignmentAdd, MdMessage } from "react-icons/md";
 import { TbDeviceIpadHorizontalCog } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import { SiReaddotcv } from "react-icons/si";
 const AdminMenu = () => {
   return (
     <>
@@ -27,6 +28,11 @@ const AdminMenu = () => {
         icon={MdMessage}
         label="All Messages"
         address="/dashboard/messages"
+      />
+      <MenuItem
+        icon={SiReaddotcv}
+        label="Update Resume URL"
+        address="/dashboard/resume"
       />
     </>
   );

@@ -43,6 +43,7 @@ export const router = createBrowserRouter([
       { path: "add-certificate", element: <AddCertificate></AddCertificate> },
       { path: "add-tech", element: <AddTech></AddTech> },
       { path: "messages", element: <Messages></Messages> },
+      { path: "resume", element: <Messages></Messages> },
     ],
   },
 ]);
