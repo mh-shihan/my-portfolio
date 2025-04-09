@@ -8,8 +8,10 @@ import logo from "../assets/shihan-logo.png";
 import { AuthContext } from "../providers/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
 import Loader from "../shared/Loader";
+import useFetchResume from "../hooks/useFetchResume";
 
 const Navbar = () => {
+  const { resume_url } = useFetchResume();
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const { isAdmin, adminLoading } = useAdmin();
@@ -191,7 +193,7 @@ const Navbar = () => {
               </div> */}
 
             <a
-              href="https://drive.google.com/file/d/12PTTdd3h2NXTiJy5J4dBbjCg_ctotDKD/view?usp=sharing"
+              href={resume_url}
               target="_blank"
               className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
             >

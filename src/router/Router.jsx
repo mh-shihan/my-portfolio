@@ -11,6 +11,7 @@ import AddCertificate from "../pages/dashboard/AddCertificate";
 import AddTech from "../pages/dashboard/AddTech";
 import Messages from "../pages/dashboard/Messages";
 import AdminRoute from "./AdminRoute";
+import UpdateResumeURL from "../pages/dashboard/UpdateResumeURL";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
       { path: "add-certificate", element: <AddCertificate></AddCertificate> },
       { path: "add-tech", element: <AddTech></AddTech> },
       { path: "messages", element: <Messages></Messages> },
-      { path: "resume", element: <Messages></Messages> },
+      { path: "resume", element: <UpdateResumeURL></UpdateResumeURL> },
     ],
   },
 ]);

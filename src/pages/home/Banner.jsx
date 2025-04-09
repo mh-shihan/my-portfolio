@@ -12,7 +12,6 @@ import useFetchResume from "../../hooks/useFetchResume";
 
 const Banner = () => {
   const { resume_url } = useFetchResume();
-  console.log(resume_url);
   return (
     <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center sm:pt-10 md:pt-0 ">
       <div className="col-span-12 lg:col-span-5 hidden lg:block">
