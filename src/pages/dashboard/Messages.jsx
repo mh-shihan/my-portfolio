@@ -58,6 +58,7 @@ const Messages = () => {
           <thead>
             <tr className="bg-lime-100 text-gray-600 uppercase text-sm leading-normal">
               <th className="py-3 px-6 text-center">#</th>
+              <th className="py-3 px-6 text-center">Date & Time</th>
               <th className="py-3 px-6 text-center">Name</th>
               <th className="py-3 px-6 text-center">Email</th>
               <th className="py-3 px-6 text-center">Message</th>
@@ -81,6 +82,12 @@ const Messages = () => {
                   }`}
                 >
                   <td className="py-3 px-6">{index + 1}</td>
+                  <td className="py-3 px-6">
+                    <p className="flex flex-col">
+                      <span>{message?.date}</span>
+                      <span>{message?.time}</span>
+                    </p>
+                  </td>
                   <td className="py-3 px-6">{message?.user_name}</td>
                   <td className="py-3 px-6">{message?.user_email}</td>
                   <td className="py-3 px-6">{message?.user_message}</td>
