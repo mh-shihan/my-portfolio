@@ -18,10 +18,18 @@ const Contact = () => {
   const handleSendEmail = async (e) => {
     e.preventDefault();
     const toastId = toast.loading("Sending Message...");
+
+    const now = new Date();
+    const date = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+    const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
     const userMessage = {
       user_name: formData.name,
       user_email: formData.email,
       user_message: formData.message,
+      now,
+      date,
+      time,
     };
     const sendEmail = {
       from_name: formData.name,
