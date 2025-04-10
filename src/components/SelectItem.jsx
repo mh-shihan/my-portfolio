@@ -53,7 +53,7 @@ const SelectItem = ({ setTags }) => {
   const removeSelection = (removedItem) => {
     setSelectedItems(selectedItems.filter((item) => item !== removedItem));
   };
-  console.log(selectedItems);
+  // console.log(selectedItems);
 
   return (
     <div className="relative">
