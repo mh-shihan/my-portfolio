@@ -12,6 +12,8 @@ import AddTech from "../pages/dashboard/AddTech";
 import Messages from "../pages/dashboard/Messages";
 import AdminRoute from "./AdminRoute";
 import UpdateResumeURL from "../pages/dashboard/UpdateResumeURL";
+import Blogs from "../pages/blogs/Blogs";
+import BlogLayout from "../layouts/BlogLayout";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +23,17 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home></Home> },
       { path: "about", element: <AboutPage></AboutPage> },
+    ],
+  },
+  {
+    path: "/blogs",
+    element: <BlogLayout></BlogLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
     ],
   },
   {

@@ -7,14 +7,14 @@ import { X } from "lucide-react";
 import logo from "../assets/shihan-logo.png";
 import { AuthContext } from "../providers/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
-import Loader from "../shared/Loader";
+// import Loader from "../shared/Loader";
 import useFetchResume from "../hooks/useFetchResume";
 
 const Navbar = () => {
   const { resume_url } = useFetchResume();
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
-  const { isAdmin, adminLoading } = useAdmin();
+  const { isAdmin } = useAdmin();
 
   const links = (
     <>
@@ -48,7 +48,7 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink
           style={({ isActive, isTransitioning }) => {
             return {
@@ -62,9 +62,9 @@ const Navbar = () => {
         >
           Blogs
         </NavLink>
-      </li> */}
+      </li>
+
       {/* Dashboard */}
-      {adminLoading && <Loader />}
       {isAdmin?.admin && user && (
         <li>
           <NavLink
@@ -139,7 +139,7 @@ const Navbar = () => {
       </li> */}
 
       {/* Dashboard */}
-      {adminLoading && <Loader />}
+      {/* {adminLoading && <Loader />} */}
       {isAdmin?.admin && user && (
         <li>
           <NavLink
