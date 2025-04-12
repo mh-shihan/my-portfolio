@@ -3,7 +3,7 @@ import Sidebar from "../components/dashboard/sidebar/Sidebar";
 
 const DashboardLayout = () => {
   return (
-    <div className="relative min-h-screen md:flex bg-white">
+    <div className="relative min-h-screen md:flex bg-white interFont">
       {/* Left Side: Sidebar Component */}
       <Sidebar />
       {/* Right Side: Dashboard Dynamic Content */}

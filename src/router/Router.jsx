@@ -25,6 +25,8 @@ export const router = createBrowserRouter([
       { path: "about", element: <AboutPage></AboutPage> },
     ],
   },
+
+  // Blog
   {
     path: "/blogs",
     element: <BlogLayout></BlogLayout>,
@@ -36,10 +38,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  // Login
   {
     path: "/login",
     element: <Login></Login>,
   },
+
+  // Dashboard
   {
     path: "/dashboard",
     element: (
