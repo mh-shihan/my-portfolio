@@ -1,7 +1,13 @@
 // import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "../../shared/Container";
 import SectionTitle from "../../shared/SectionTitle";
-import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
+import {
+  Autoplay,
+  Keyboard,
+  Mousewheel,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -34,11 +40,11 @@ const Feedbacks = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
           >
             {feedbacks?.map((feed) => (
               <SwiperSlide key={feed?._id} className="px-2">
-                <div className="p-6  shadow-zinc-800 shadow-sm">
+                <div className="p-6  shadow-zinc-800">
                   {/* User Info */}
                   <div className="flex gap-4 items-center">
                     <img

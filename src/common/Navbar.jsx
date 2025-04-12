@@ -160,9 +160,9 @@ const Navbar = () => {
 
       <li>
         <a
-          href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view?usp=sharing"
+          href={resume_url}
           target="_blank"
-          className="btn border border-[#afd138]  rounded-none text-[#afd138] hover:bg-[#afd138]"
+          className="btn border border-[#afd138]  rounded-none text-[#afd138] hover:bg-[#afd138] focus:bg-transparent"
         >
           Download <br />
           Resume <FaDownload />
