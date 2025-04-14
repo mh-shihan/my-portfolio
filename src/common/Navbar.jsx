@@ -120,7 +120,7 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink
           className="hover:text-lime-400"
           style={({ isActive, isTransitioning }) => {
@@ -136,7 +136,7 @@ const Navbar = () => {
         >
           Blogs
         </NavLink>
-      </li> */}
+      </li>
 
       {/* Dashboard */}
       {/* {adminLoading && <Loader />} */}
@@ -172,7 +172,7 @@ const Navbar = () => {
   );
   return (
     <nav className="fixed top-0 left-0 w-full z-40 bg-gradient-to-b from-zinc-950 to-zinc-900/0 pt-2">
-      <div className=" navbar flex items-center max-w-[2520px] mx-auto px-0 md:px-6 xl:px-20">
+      <div className=" navbar flex items-center max-w-[2520px] mx-auto pl-2 md:pl-0 px-0 md:px-6 xl:px-20">
         {/* Logo and Navigation for Larger Devices */}
         <div className="navbar-start lg:flex">
           <a href="/" className="text-xl">
