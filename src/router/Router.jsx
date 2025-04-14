@@ -14,6 +14,9 @@ import AdminRoute from "./AdminRoute";
 import UpdateResumeURL from "../pages/dashboard/UpdateResumeURL";
 import Blogs from "../pages/blogs/Blogs";
 import BlogLayout from "../layouts/BlogLayout";
+import BlogDetails from "../pages/blogs/BlogDetails";
+
+const baseURL = import.meta.env.VITE_SERVER_API;
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +38,11 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogDetails></BlogDetails>,
+        loader: ({ params }) => fetch(`${baseURL}/blogs/${params.id}`),
       },
     ],
   },
