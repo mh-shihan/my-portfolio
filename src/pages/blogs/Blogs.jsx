@@ -1,19 +1,12 @@
-import { useEffect, useState } from "react";
 import BlogContainer from "../../shared/BlogContainer";
 import BlogHeader from "./BlogHeader";
 import Blog from "./Blog";
-
+import useFetchData from "../../hooks/useFetchData";
+import Loader from "../../shared/Loader";
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, isLoading] = useFetchData("/blogs", "blogs");
+  // console.log(blogs);
 
-  useEffect(() => {
-    fetch("/blogs.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setBlogs(data);
-      });
-  }, []);
-  console.log(blogs);
   return (
     <div className="">
       <BlogHeader
@@ -24,6 +17,7 @@ const Blogs = () => {
       />
       <BlogContainer>
         <div className="flex flex-col">
+          {isLoading && <Loader />}
           {blogs?.map((blog, idx) => (
             <Blog key={idx} blog={blog}></Blog>
           ))}
