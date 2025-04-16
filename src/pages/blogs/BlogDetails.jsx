@@ -3,6 +3,7 @@ import BlogHeader from "./BlogHeader";
 import BlogContainer from "../../shared/BlogContainer";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { TbCategoryFilled } from "react-icons/tb";
+import Markdown from "react-markdown";
 
 const BlogDetails = () => {
   const blog = useLoaderData();
@@ -31,7 +32,10 @@ const BlogDetails = () => {
                 </p>
               </div>
             </div>
+            <Markdown>{blog.blog}</Markdown>
+            {/* <pre className="whitespace-pre-wrap text-gray-200">{blog.blog}</pre> */}
           </div>
+
           <div className="xl:col-span-3 border">
             <img className="rounded-sm" src={blog.img} alt={blog.title} />
           </div>
