@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
 import ScrollPageToTop from "../components/ScrollPageToTop";
+import ScrollProgress from "../components/ScrollProgress";
 
 const MainLayout = () => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = () => {
         <Outlet></Outlet>
       </div>
       <Footer />
+      <ScrollProgress />
     </div>
   );
 };
