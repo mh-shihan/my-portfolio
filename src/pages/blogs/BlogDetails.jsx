@@ -3,17 +3,18 @@ import BlogHeader from "./BlogHeader";
 import BlogContainer from "../../shared/BlogContainer";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { TbCategoryFilled } from "react-icons/tb";
-import Markdown from "react-markdown";
+import MdxRenderer from "../../components/MdxRender";
 
 const BlogDetails = () => {
   const blog = useLoaderData();
+  console.log(blog.blog);
   return (
     <div>
       <BlogHeader title={blog.title} description={blog.short_description} />
       <BlogContainer>
         <div className=" flex xl:grid xl:grid-cols-12 gap-6 xl:gap-10 ">
-          <div className="xl:col-span-9 mr-10  ">
-            <div className="border-b border-[#C4F000] pb-8 space-y-6">
+          <div className="xl:col-span-9 mr-10">
+            <div className="border-b border-[#C4F000] pb-8 space-y-6 ">
               <img
                 className="rounded-sm w-full"
                 src={blog.img}
@@ -32,8 +33,9 @@ const BlogDetails = () => {
                 </p>
               </div>
             </div>
-            <Markdown>{blog.blog}</Markdown>
+            {/* <Markdown>{blog.blog}</Markdown> */}
             {/* <pre className="whitespace-pre-wrap text-gray-200">{blog.blog}</pre> */}
+            <MdxRenderer content={blog.blog} />
           </div>
 
           <div className="xl:col-span-3 border">
