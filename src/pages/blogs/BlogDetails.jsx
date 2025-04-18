@@ -6,7 +6,7 @@ import { TbCategoryFilled } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
 import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
-import { Fullscreen } from "lucide-react";
+import TagBtn from "../../components/TagBtn";
 
 const BlogDetails = () => {
   const blog = useLoaderData();
@@ -51,7 +51,6 @@ const BlogDetails = () => {
                 style={{
                   padding: 16,
                   overflow: "scroll",
-                  maxWidth: Fullscreen,
                 }}
                 rehypeRewrite={(node, index, parent) => {
                   if (
@@ -67,18 +66,28 @@ const BlogDetails = () => {
 
             {/* Tags */}
             <div className="mt-6 px-3 md:px-0">
-              {blog.tags.map((tag, idx) => (
-                <button
-                  key={idx}
-                  className="btn btn-outline text-gray-200 hover:text-gray-200 border border-[#C4F000] hover:border-[#C4F000] border-opacity-50 hover:border-opacity-50  mt-3 ml-2 cursor-default hover:bg-transparent"
-                >
-                  {tag}
-                </button>
-              ))}
+              {blog.tags
+                .filter((_, idx) => idx < 3)
+                .map((tag, idx) => (
+                  <TagBtn key={idx} tag={tag}></TagBtn>
+                ))}
             </div>
           </div>
 
-          <div className="xl:col-span-3 flex flex-col">
+          <div className="xl:col-span-3 flex flex-col space-y-10">
+            {/* Search box */}
+            <div className="border border-[#C4F000] border-opacity-70 rounded-xl p-5">
+              <h3 className="text-gray-300 text-3xl font-medium">Search</h3>
+              <input
+                name="search"
+                type="text"
+                placeholder="Search"
+                className="input text-xl py-2 mt-4 text-clip rounded-none w-full bg-transparent border border-[#333]"
+              />
+              <button className="px-4 py-2 border  border-transparent hover:border-[#333] text-gray-200 hover:text-gray-200  bg-[#333]  hover:bg-transparent ">
+                Search
+              </button>
+            </div>
             <img
               className="rounded-sm w-full h-auto object-cover"
               src={blog.img}
