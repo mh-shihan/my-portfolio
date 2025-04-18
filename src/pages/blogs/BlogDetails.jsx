@@ -24,7 +24,7 @@ const BlogDetails = () => {
       <BlogContainer>
         <div className=" flex flex-col xl:flex-row xl:grid xl:grid-cols-12 gap-6 xl:gap-12 ">
           <div className="w-full xl:col-span-9 mr-10">
-            <div className="border-b border-[#C4F000] pb-8 space-y-6 xl:max-w-full  overflow-hidden">
+            <div className="border-b mb-6 border-[#C4F000] pb-8 space-y-6 xl:max-w-full  overflow-hidden">
               <img
                 className="rounded-sm w-full h-auto max-w-full object-cover aspect-video"
                 src={blog.img}
@@ -45,7 +45,7 @@ const BlogDetails = () => {
             </div>
 
             {/* Markdown Content */}
-            <div className=" border max-w-full px-4 xl:px-0 overflow-x-hidden ">
+            <div className=" max-w-full px-4 xl:px-0 overflow-x-hidden ">
               <MarkdownPreview
                 source={blogContent}
                 style={{
@@ -66,7 +66,7 @@ const BlogDetails = () => {
             </div>
           </div>
 
-          <div className="xl:col-span-3 border">
+          <div className="xl:col-span-3 flex flex-col">
             <img
               className="rounded-sm w-full h-auto object-cover"
               src={blog.img}
