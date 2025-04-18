@@ -48,7 +48,7 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink
           style={({ isActive, isTransitioning }) => {
             return {
@@ -62,7 +62,7 @@ const Navbar = () => {
         >
           Blogs
         </NavLink>
-      </li> */}
+      </li>
 
       {/* Dashboard */}
       {isAdmin?.admin && user && (
@@ -120,7 +120,7 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink
           className="hover:text-lime-400"
           style={({ isActive, isTransitioning }) => {
@@ -136,7 +136,7 @@ const Navbar = () => {
         >
           Blogs
         </NavLink>
-      </li> */}
+      </li>
 
       {/* Dashboard */}
       {/* {adminLoading && <Loader />} */}

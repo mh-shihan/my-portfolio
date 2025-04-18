@@ -3,11 +3,20 @@ import BlogHeader from "./BlogHeader";
 import BlogContainer from "../../shared/BlogContainer";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { TbCategoryFilled } from "react-icons/tb";
-import MdxRenderer from "../../components/MdxRender";
+import { useEffect, useState } from "react";
+import Prism from "prismjs";
+import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
 
 const BlogDetails = () => {
   const blog = useLoaderData();
-  console.log(blog.blog);
+  const [blogContent, setBlogContent] = useState(``);
+  useEffect(() => {
+    setBlogContent(blog.blog);
+  }, [blog]);
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   return (
     <div>
       <BlogHeader title={blog.title} description={blog.short_description} />
@@ -33,9 +42,23 @@ const BlogDetails = () => {
                 </p>
               </div>
             </div>
-            {/* <Markdown>{blog.blog}</Markdown> */}
-            {/* <pre className="whitespace-pre-wrap text-gray-200">{blog.blog}</pre> */}
-            <MdxRenderer content={blog.blog} />
+
+            {/* Markdown Content */}
+            <div className="border">
+              <MarkdownPreview
+                source={blogContent}
+                style={{ padding: 16 }}
+                rehypeRewrite={(node, index, parent) => {
+                  if (
+                    node.tagName === "a" &&
+                    parent &&
+                    /^h(1|2|3|4|5|6)/.test(parent.tagName)
+                  ) {
+                    parent.children = parent.children.slice(1);
+                  }
+                }}
+              />
+            </div>
           </div>
 
           <div className="xl:col-span-3 border">
