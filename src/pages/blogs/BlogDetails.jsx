@@ -24,7 +24,7 @@ const BlogDetails = () => {
       <BlogContainer>
         <div className=" flex flex-col xl:flex-row xl:grid xl:grid-cols-12 gap-6 xl:gap-12 ">
           <div className="w-full xl:col-span-9 mr-10">
-            <div className="border-b mb-6 border-[#C4F000] pb-8 space-y-6 xl:max-w-full  overflow-hidden">
+            <div className="border-b mb-6 border-[#C4F000] border-opacity-50 pb-8 space-y-6 xl:max-w-full  overflow-hidden">
               <img
                 className="rounded-sm w-full h-auto max-w-full object-cover aspect-video"
                 src={blog.img}
@@ -70,7 +70,7 @@ const BlogDetails = () => {
               {blog.tags.map((tag, idx) => (
                 <button
                   key={idx}
-                  className="btn btn-outline text-gray-200 hover:text-gray-200 border border-[#C4F000] hover:border-[#C4F000]  mt-3 ml-2 cursor-default hover:bg-transparent"
+                  className="btn btn-outline text-gray-200 hover:text-gray-200 border border-[#C4F000] hover:border-[#C4F000] border-opacity-50 hover:border-opacity-50  mt-3 ml-2 cursor-default hover:bg-transparent"
                 >
                   {tag}
                 </button>
