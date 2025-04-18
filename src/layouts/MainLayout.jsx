@@ -9,7 +9,7 @@ const MainLayout = () => {
     <div className="interFont">
       <ScrollPageToTop />
       <Navbar />
-      <div className="pt-16 max-w-[2520px] mx-auto px-0 md:px-6 xl:px-20">
+      <div className="pt-16 max-w-[2120px] mx-auto px-0 md:px-6 xl:px-20">
         <Outlet></Outlet>
       </div>
       <Footer />

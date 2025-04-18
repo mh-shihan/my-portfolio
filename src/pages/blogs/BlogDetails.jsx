@@ -64,6 +64,18 @@ const BlogDetails = () => {
                 }}
               />
             </div>
+
+            {/* Tags */}
+            <div className="mt-6 px-3 md:px-0">
+              {blog.tags.map((tag, idx) => (
+                <button
+                  key={idx}
+                  className="btn btn-outline text-gray-200 hover:text-gray-200 border border-[#C4F000] hover:border-[#C4F000]  mt-3 ml-2 cursor-default hover:bg-transparent"
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="xl:col-span-3 flex flex-col">
