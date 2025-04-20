@@ -15,33 +15,34 @@ import UpdateResumeURL from "../pages/dashboard/UpdateResumeURL";
 import Blogs from "../pages/blogs/Blogs";
 import BlogLayout from "../layouts/BlogLayout";
 import BlogDetails from "../pages/blogs/BlogDetails";
+import PostBlog from "../pages/dashboard/PostBlog";
 
 const baseURL = import.meta.env.VITE_SERVER_API;
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Home></Home> },
-      { path: "about", element: <AboutPage></AboutPage> },
+      { path: "/", element: <Home /> },
+      { path: "about", element: <AboutPage /> },
     ],
   },
 
   // Blog
   {
     path: "/blogs",
-    element: <BlogLayout></BlogLayout>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <BlogLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/blogs",
-        element: <Blogs></Blogs>,
+        element: <Blogs />,
       },
       {
         path: "/blogs/:id",
-        element: <BlogDetails></BlogDetails>,
+        element: <BlogDetails />,
         loader: ({ params }) => fetch(`${baseURL}/blogs/${params.id}`),
       },
     ],
@@ -50,7 +51,7 @@ export const router = createBrowserRouter([
   // Login
   {
     path: "/login",
-    element: <Login></Login>,
+    element: <Login />,
   },
 
   // Dashboard
@@ -58,19 +59,20 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <AdminRoute>
-        <DashboardLayout></DashboardLayout>
+        <DashboardLayout />
       </AdminRoute>
     ),
     children: [
       {
         path: "/dashboard",
-        element: <DashboardHome></DashboardHome>,
+        element: <DashboardHome />,
       },
-      { path: "add-project", element: <AddProject></AddProject> },
-      { path: "add-certificate", element: <AddCertificate></AddCertificate> },
-      { path: "add-tech", element: <AddTech></AddTech> },
-      { path: "messages", element: <Messages></Messages> },
-      { path: "resume", element: <UpdateResumeURL></UpdateResumeURL> },
+      { path: "add-project", element: <AddProject /> },
+      { path: "add-certificate", element: <AddCertificate /> },
+      { path: "add-tech", element: <AddTech /> },
+      { path: "messages", element: <Messages /> },
+      { path: "resume", element: <UpdateResumeURL /> },
+      { path: "post-blog", element: <PostBlog /> },
     ],
   },
 ]);
