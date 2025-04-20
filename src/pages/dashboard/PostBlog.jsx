@@ -27,7 +27,7 @@ const PostBlog = () => {
             type="submit"
             className="w-full px-6 py-3 font-semibold text-zinc-700 hover:text-white bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none "
           >
-            Update Resume
+            Post
           </button>
         </div>
       </form>

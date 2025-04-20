@@ -4,6 +4,8 @@ import { MdAssignmentAdd, MdMessage } from "react-icons/md";
 import { TbDeviceIpadHorizontalCog } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { SiReaddotcv } from "react-icons/si";
+import { ImBlog } from "react-icons/im";
+
 const AdminMenu = () => {
   return (
     <>
@@ -33,6 +35,11 @@ const AdminMenu = () => {
         icon={SiReaddotcv}
         label="Update Resume URL"
         address="/dashboard/resume"
+      />
+      <MenuItem
+        icon={ImBlog}
+        label="Post Blog"
+        address="/dashboard/post-blog"
       />
     </>
   );
