@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Prism from "prismjs";
 import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
 import TagBtn from "../../components/TagBtn";
+import me from "../../assets/blog-details-baout.png";
 
 const BlogDetails = () => {
   const blog = useLoaderData();
@@ -77,22 +78,38 @@ const BlogDetails = () => {
           <div className="xl:col-span-3 flex flex-col space-y-10">
             {/* Search box */}
             <div className="border border-[#C4F000] border-opacity-70 rounded-xl p-5">
-              <h3 className="text-gray-300 text-3xl font-medium">Search</h3>
+              <h3 className="text-gray-300 text-3xl font-medium mb-4">
+                Search
+              </h3>
               <input
                 name="search"
                 type="text"
                 placeholder="Search"
-                className="input text-xl py-2 mt-4 text-clip rounded-none w-full bg-transparent border border-[#333]"
+                className="input text-xl py-2 text-clip rounded-none w-full bg-transparent border border-[#333]"
               />
               <button className="px-4 py-2 border  border-transparent hover:border-[#333] text-gray-200 hover:text-gray-200  bg-[#333]  hover:bg-transparent ">
                 Search
               </button>
             </div>
-            <img
-              className="rounded-sm w-full h-auto object-cover"
-              src={blog.img}
-              alt={blog.title}
-            />
+
+            {/* About Me */}
+            <div className="border border-[#C4F000] border-opacity-70 rounded-xl p-5">
+              <h3 className="text-gray-300 text-3xl font-medium mb-4">
+                About Me
+              </h3>
+              <img
+                className="rounded-sm w-full h-auto object-cover"
+                src={me}
+                alt="Blog Write Image"
+              />
+              <p className="text-justify text-gray-300">
+                Hi, I&apos;m Mahmudul Hasan Shihan, a passionate web developer
+                skilled in building responsive, user-friendly, and modern
+                websites. I specialize in front-end and back-end technologies,
+                including React, Tailwind, Node.js, and MongoDB. My goal is to
+                create digital experiences that help businesses grow online.
+              </p>
+            </div>
           </div>
         </div>
       </BlogContainer>
