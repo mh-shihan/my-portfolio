@@ -110,6 +110,16 @@ const BlogDetails = () => {
                 create digital experiences that help businesses grow online.
               </p>
             </div>
+
+            {/* ALl Tags */}
+            <div className="border border-[#C4F000] border-opacity-70 rounded-xl p-5">
+              <h3 className="text-gray-300 text-3xl font-medium mb-4">Tags</h3>
+              <div className="flex flex-wrap gap-1">
+                {blog.tags.map((tag, idx) => (
+                  <TagBtn key={idx} tag={tag}></TagBtn>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </BlogContainer>
