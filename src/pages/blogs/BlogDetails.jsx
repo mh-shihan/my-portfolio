@@ -4,7 +4,7 @@ import BlogContainer from "../../shared/BlogContainer";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { TbCategoryFilled } from "react-icons/tb";
 import { useEffect, useState } from "react";
-import Prism from "prismjs";
+// import Prism from "prismjs";
 import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
 import TagBtn from "../../components/TagBtn";
 import me from "../../assets/blog-details-baout.png";
@@ -16,9 +16,9 @@ const BlogDetails = () => {
     setBlogContent(blog.blog);
   }, [blog]);
 
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
+  // useEffect(() => {
+  //   Prism.highlightAll();
+  // }, []);
   return (
     <div>
       <BlogHeader title={blog.title} description={blog.short_description} />

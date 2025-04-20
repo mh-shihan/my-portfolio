@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
 
 const PostBlog = () => {
   const [blogContent, setBlogContent] = useState(``);
@@ -11,10 +12,10 @@ const PostBlog = () => {
   });
   const { title, type, category, tags, short_description } = formData;
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white text-gray-700">
+    <div className="w-full mx-auto p-6 bg-white text-gray-700">
       <h1 className="text-2xl font-bold mb-6 text-center">Post Blog</h1>
       <div className="flex flex-col xl:grid grid-cols-2 gap-6">
-        <form className="space-y-6 col-span-1 border">
+        <form className="space-y-6 col-span-1">
           {/* Title */}
           <div>
             <label
@@ -33,6 +34,23 @@ const PostBlog = () => {
               value={title}
               placeholder="Title of the Blog"
               className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400 text-sm md:text-lg"
+              required
+            />
+          </div>
+          {/* Image */}
+          <div>
+            <label
+              className="block text-sm md:text-lg font-medium mb-2 text-gray-700"
+              htmlFor="image"
+            >
+              Project Image
+            </label>
+            <input
+              type="file"
+              id="profileImage"
+              name="image"
+              accept="image/*"
+              className="file-input file-input-bordered w-full rounded-md"
               required
             />
           </div>
@@ -152,7 +170,29 @@ const PostBlog = () => {
             </button>
           </div>
         </form>
-        <div className="col-span-1"></div>
+        <div className="col-span-1">
+          <h1 className="text-center text-sm md:text-xl font-medium text-gray-800 ">
+            Markdown Previewer
+          </h1>
+          <div className=" max-w-full px-4 xl:px-0 overflow-x-hidden ">
+            <MarkdownPreview
+              source={blogContent}
+              style={{
+                padding: 16,
+                overflow: "scroll",
+              }}
+              rehypeRewrite={(node, index, parent) => {
+                if (
+                  node.tagName === "a" &&
+                  parent &&
+                  /^h(1|2|3|4|5|6)/.test(parent.tagName)
+                ) {
+                  parent.children = parent.children.slice(1);
+                }
+              }}
+            />
+          </div>{" "}
+        </div>
       </div>
     </div>
   );
