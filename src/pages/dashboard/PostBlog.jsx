@@ -150,7 +150,7 @@ const PostBlog = () => {
               type="text"
               id="blogContent"
               name="blogContent"
-              rows="10"
+              rows="12"
               onChange={(e) => setBlogContent(e.target.value)}
               value={blogContent}
               placeholder="Wirte the markdown content of the Blog"
@@ -170,11 +170,11 @@ const PostBlog = () => {
             </button>
           </div>
         </form>
-        <div className="col-span-1">
-          <h1 className="text-center text-sm md:text-xl font-medium text-gray-800 ">
+        <div className="xl:col-span-1">
+          <h1 className="text-center text-2xl xl:text-xl font-bold xl:font-medium text-gray-800 ">
             Markdown Previewer
           </h1>
-          <div className=" max-w-full px-4 xl:px-0 overflow-x-hidden ">
+          <div className=" max-w-full overflow-x-hidden ">
             <MarkdownPreview
               source={blogContent}
               style={{
