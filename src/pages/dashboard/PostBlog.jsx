@@ -1,5 +1,7 @@
 import { useState } from "react";
 import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
+import toast from "react-hot-toast";
+import uploadImage from "../../utils/uploadImage";
 
 const PostBlog = () => {
   const [blogContent, setBlogContent] = useState(``);
@@ -11,11 +13,36 @@ const PostBlog = () => {
     short_description: "",
   });
   const { title, type, category, tags, short_description } = formData;
+
+  const handlePostBlog = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const toastId = toast.loading("Posting blog...");
+    const image = form.image.files[0];
+    const photoURL = await uploadImage(image);
+    const blog = {
+      title,
+      type,
+      category,
+      tags,
+      short_description,
+      blog: blogContent,
+      img: photoURL,
+      posted_date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }),
+    };
+    console.log("blog", blog);
+  };
+  // console.log("formData", formData);
+
   return (
     <div className="w-full mx-auto p-6 bg-white text-gray-700">
       <h1 className="text-2xl font-bold mb-6 text-center">Post Blog</h1>
       <div className="flex flex-col xl:grid grid-cols-2 gap-6">
-        <form className="space-y-6 col-span-1">
+        <form onSubmit={handlePostBlog} className="space-y-6 col-span-1">
           {/* Title */}
           <div>
             <label
@@ -130,7 +157,7 @@ const PostBlog = () => {
               id="tags"
               name="tags"
               onChange={(e) =>
-                setFormData({ ...formData, tags: e.target.value })
+                setFormData({ ...formData, tags: e.target.value.split(",") })
               }
               value={tags}
               placeholder="Wirte the Tags of the Blog"

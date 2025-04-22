@@ -64,7 +64,7 @@ const AddProject = () => {
         key_features,
         developer,
       };
-      console.log(projectInfo);
+      // console.log(projectInfo);
 
       try {
         const res = await axiosPublic.post("/projects", projectInfo);
