@@ -2,8 +2,11 @@ import { useState } from "react";
 import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
 import toast from "react-hot-toast";
 import uploadImage from "../../utils/uploadImage";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const PostBlog = () => {
+  const axiosPublic = useAxiosPublic();
+
   const [blogContent, setBlogContent] = useState(``);
   const [formData, setFormData] = useState({
     title: "",
@@ -19,22 +22,48 @@ const PostBlog = () => {
     const form = e.target;
     const toastId = toast.loading("Posting blog...");
     const image = form.image.files[0];
-    const photoURL = await uploadImage(image);
-    const blog = {
-      title,
-      type,
-      category,
-      tags,
-      short_description,
-      blog: blogContent,
-      img: photoURL,
-      posted_date: new Date().toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      }),
-    };
-    console.log("blog", blog);
+    // const photoURL = await uploadImage(image);
+    const photoURL = "fladjflsadkjfasldik";
+    if (photoURL) {
+      const blog = {
+        img: photoURL,
+        title,
+        type,
+        category,
+        posted_date: new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }),
+        tags,
+        short_description,
+        blog: blogContent,
+      };
+      console.log("blog", blog);
+
+      try {
+        const res = await axiosPublic.post("/blogs", blog);
+        if (res.status === 200) {
+          toast.success("Blog Posted Successfully.👍", { id: toastId });
+          setFormData({
+            title: "",
+            type: "",
+            category: "",
+            tags: [],
+            short_description: "",
+          });
+          setBlogContent("");
+          form.reset();
+        } else {
+          toast.error("Blog Post Failed", { id: toastId });
+        }
+      } catch (error) {
+        console.log("error", error);
+        toast.error(error.message, { id: toastId });
+      }
+    } else {
+      toast.error("Image Upload Failed", { id: toastId });
+    }
   };
   // console.log("formData", formData);
 
@@ -157,7 +186,10 @@ const PostBlog = () => {
               id="tags"
               name="tags"
               onChange={(e) =>
-                setFormData({ ...formData, tags: e.target.value.split(",") })
+                setFormData({
+                  ...formData,
+                  tags: e.target.value.trim().split(","),
+                })
               }
               value={tags}
               placeholder="Wirte the Tags of the Blog"
