@@ -3,6 +3,7 @@ import MarkdownPreview from "@uiw/react-markdown-preview"; //Very Important
 import toast from "react-hot-toast";
 import uploadImage from "../../utils/uploadImage";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import getCurrentDate from "../../utils/getCurrentDate";
 
 const PostBlog = () => {
   const axiosPublic = useAxiosPublic();
@@ -30,11 +31,7 @@ const PostBlog = () => {
         title,
         type,
         category,
-        posted_date: new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        }),
+        posted_date: getCurrentDate(),
         tags,
         short_description,
         blog: blogContent,
@@ -65,7 +62,6 @@ const PostBlog = () => {
       toast.error("Image Upload Failed", { id: toastId });
     }
   };
-  // console.log("formData", formData);
 
   return (
     <div className="w-full mx-auto p-6 bg-white text-gray-700">
