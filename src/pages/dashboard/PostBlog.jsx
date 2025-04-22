@@ -23,8 +23,7 @@ const PostBlog = () => {
     const form = e.target;
     const toastId = toast.loading("Posting blog...");
     const image = form.image.files[0];
-    // const photoURL = await uploadImage(image);
-    const photoURL = "fladjflsadkjfasldik";
+    const photoURL = await uploadImage(image);
     if (photoURL) {
       const blog = {
         img: photoURL,
