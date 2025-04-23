@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const MenuItem = ({ label, address, icon: Icon }) => {
+const MenuItem = ({ label, address, icon: Icon, setIsOpen }) => {
   return (
     <NavLink
+      onClick={() => setIsOpen(true)}
       to={address}
       end
       className={({ isActive }) =>

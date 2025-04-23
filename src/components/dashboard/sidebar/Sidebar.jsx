@@ -10,10 +10,11 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const { user, signout } = useContext(AuthContext);
   const [isAdmin] = useFetchData(`/admin/${user?.email}`, `${user?.email}`);
   const navigate = useNavigate();
+  // console.log(isOpen);
 
   const handleLogOut = () => {
     Swal.fire({
@@ -65,7 +66,7 @@ const Sidebar = () => {
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`mobile-menu-button p-4 ${isOpen && ""}`}
+          className={`mobile-menu-button p-4 }`}
         >
           <AiOutlineBars className="h-5 w-5" />
         </button>
@@ -96,7 +97,7 @@ const Sidebar = () => {
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
               {/*  Menu Items */}
-              {isAdmin && <AdminMenu />}
+              {isAdmin && <AdminMenu setIsOpen={setIsOpen} />}
             </nav>
           </div>
         </div>

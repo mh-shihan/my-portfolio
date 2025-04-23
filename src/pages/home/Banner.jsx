@@ -23,7 +23,7 @@ const Banner = () => {
       </div>
       <div className="my-2 md:my-10 mt-8 sm:mt-16 md:mt-24 lg:my-6 col-span-10 lg:col-span-7 text-left">
         <h2 className="ml-2 md:ml-8 xl:ml-0 text-2xl font-semibold">
-          Hello - I'm
+          Hello - I&apos;m
         </h2>
         <h1 className="inline-block text-left text-4xl md:text-7xl font-semibold ml-2 md:ml-8 xl:ml-0 mb-2 bg-gradient-to-r from-[#c0eb4a] to-zinc-950 bg-clip-text text-transparent">
           Mahmudul Hasan Shihan
@@ -47,9 +47,10 @@ const Banner = () => {
           </a>
         </div>
         <Marquee speed={40} className="mt-4">
-          "Crafting seamless digital experiences, one line of code at a time." -
-          "Where creativity meets code welcome to my portfolio." - "Turning
-          ideas into impactful web solutions." -
+          &quot;Crafting seamless digital experiences, one line of code at a
+          time.&quot; - &quot;Where creativity meets code welcome to my
+          portfolio.&quot; - &quot;Turning ideas into impactful web
+          solutions.&quot; -
         </Marquee>
       </div>
 
