@@ -64,7 +64,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="mt-8 lg:mt-20">
+    <div id="Contact" className="mt-8 lg:mt-20">
       <Container>
         <div className="flex flex-col md:flex-row justify-center bg-zinc-900 p-6 rounded-md">
           <div className="w-full md:w-1/2 px-6">

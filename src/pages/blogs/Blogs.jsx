@@ -16,7 +16,7 @@ const Blogs = () => {
           no spam and ads."
       />
       <BlogContainer>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-10">
           {isLoading && <Loader />}
           {blogs?.map((blog, idx) => (
             <Blog key={idx} blog={blog}></Blog>

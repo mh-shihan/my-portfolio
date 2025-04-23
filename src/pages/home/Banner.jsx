@@ -40,10 +40,10 @@ const Banner = () => {
             Download Resume <FaDownload></FaDownload>
           </a>
           <a
-            href="#About"
+            href="#Contact"
             className=" btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
           >
-            Learn More <TbArrowLoopRight2 className="text-xl" />
+            Contact <TbArrowLoopRight2 className="text-xl" />
           </a>
         </div>
         <Marquee speed={40} className="mt-4">
