@@ -3,12 +3,16 @@ import BlogHeader from "./BlogHeader";
 import Blog from "./Blog";
 import useFetchData from "../../hooks/useFetchData";
 import Loader from "../../shared/Loader";
+import { Helmet } from "react-helmet";
 const Blogs = () => {
   const [blogs, isLoading] = useFetchData("/blogs", "blogs");
   // console.log(blogs);
 
   return (
     <div className="">
+      <Helmet>
+        <title>Blog | Shihan&apos;s Portfolio </title>
+      </Helmet>
       <BlogHeader
         title="Blogs"
         description="I write about JavaScript, MERN Stack, Frontend tools and tech, Backend tech, Nextjs, and New technologies.
