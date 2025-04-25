@@ -1,14 +1,9 @@
-import {
-  FaDownload,
-  FaGithub,
-  FaLinkedinIn,
-  FaSquareXTwitter,
-} from "react-icons/fa6";
+import { FaDownload } from "react-icons/fa6";
 import banner from "../../assets/banner.png";
 import { TbArrowLoopRight2 } from "react-icons/tb";
-import { FaFacebookSquare } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 import useFetchResume from "../../hooks/useFetchResume";
+import SocialIcon from "../../components/SocialIcon";
 
 const Banner = () => {
   const { resume_url } = useFetchResume();
@@ -55,30 +50,8 @@ const Banner = () => {
       </div>
 
       {/* social icons */}
-      <div className="join join-vertical fixed left-0 bottom-0 md:bottom-28 rounded-none border-none z-20">
-        <a
-          href="https://www.linkedin.com/in/mahmudul-hasan-shihan/"
-          target="_blank"
-        >
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaLinkedinIn className="text-xl " />
-          </button>
-        </a>
-        <a href="https://www.facebook.com/mhshihan20/" target="_blank">
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaFacebookSquare className="text-xl " />
-          </button>
-        </a>
-        <a href="https://github.com/mh-shihan" target="_blank">
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaGithub className="text-xl" />
-          </button>
-        </a>
-        <a href="https://x.com/mh_shihan" target="_blank">
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaSquareXTwitter className="text-xl" />
-          </button>
-        </a>
+      <div className="fixed bottom-0 left-0 md:bottom-28 rounded-none border-none z-20 hidden lg:block">
+        <SocialIcon></SocialIcon>
       </div>
     </section>
   );
