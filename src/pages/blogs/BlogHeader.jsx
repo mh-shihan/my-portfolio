@@ -1,7 +1,7 @@
 const BlogHeader = ({ title, description }) => {
   return (
-    <div className="h-[50vh] md:h-[70vh] xl:h-[85vh] bg-[linear-gradient(315deg,_#130f40_0%,_#000000_74%)] relative px-2 md:px-0">
-      <div className="absolute pt-16 max-w-[2520px] mx-auto px-0 md:px-6 xl:px-20 top-6 xl:top-28">
+    <div className="h-[50vh] md:h-[70vh] xl:h-[80vh] bg-[linear-gradient(315deg,_#130f40_0%,_#000000_74%)] relative px-2 md:px-0">
+      <div className="max-w-[1360px] mx-auto pt-20 xl:pt-28  px-0 md:px-6 xl:px-20">
         <h1 className="text-4xl md:text-6xl xl:text-7xl font-medium bg-[linear-gradient(to_bottom,_#fff,_#696969)] bg-clip-text text-transparent interFont py-2">
           {title}
         </h1>
