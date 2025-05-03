@@ -65,7 +65,7 @@ const AddCertificate = () => {
             }
             value={formData.name}
             placeholder="Enter course name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400"
             required
           />
         </div>
@@ -87,14 +87,17 @@ const AddCertificate = () => {
             }
             value={formData.platform}
             placeholder="Enter platform name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white "
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400 "
             required
           />
         </div>
 
         {/* Image */}
         <div>
-          <label className="block font-medium mb-2 text-white" htmlFor="image">
+          <label
+            className="block font-medium mb-2 text-gray-400"
+            htmlFor="image"
+          >
             Certificate Image
           </label>
           <input
@@ -123,7 +126,7 @@ const AddCertificate = () => {
             }
             value={formData.credential}
             placeholder="Enter credential link"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400"
           />
         </div>
 

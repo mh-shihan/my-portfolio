@@ -119,7 +119,7 @@ const AddProject = () => {
             }
             value={formData.title}
             placeholder="Enter project name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none "
             required
           />
         </div>
@@ -141,7 +141,7 @@ const AddProject = () => {
             }
             value={formData.subTitle}
             placeholder="Sub title"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none "
             required
           />
         </div>
@@ -183,7 +183,7 @@ const AddProject = () => {
                 setFormData({ ...formData, client: e.target.value })
               }
               value={formData.client}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -205,7 +205,7 @@ const AddProject = () => {
                 setFormData({ ...formData, duration: e.target.value })
               }
               value={formData.duration}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -228,7 +228,7 @@ const AddProject = () => {
             }
             value={formData.developer}
             placeholder="Developer or Developers"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none "
+            className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none "
             required
           />
         </div>
@@ -252,7 +252,7 @@ const AddProject = () => {
                 setFormData({ ...formData, live_link: e.target.value })
               }
               value={formData.live_link}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -272,7 +272,7 @@ const AddProject = () => {
                 setFormData({ ...formData, client_link: e.target.value })
               }
               value={formData.client_link}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -294,7 +294,7 @@ const AddProject = () => {
                 setFormData({ ...formData, server_link: e.target.value })
               }
               value={formData.server_link}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -338,7 +338,7 @@ const AddProject = () => {
               setFormData({ ...formData, description: e.target.value })
             }
             value={formData.description}
-            className="w-full px-4 pt-2 border border-gray-300 rounded-md focus:outline-none"
+            className="w-full px-4 pt-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
             rows="4"
             required
           ></textarea>
@@ -360,7 +360,7 @@ const AddProject = () => {
               setFormData({ ...formData, features: e.target.value })
             }
             value={formData.features}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+            className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-md focus:outline-none"
             rows="4"
             required
           ></textarea>

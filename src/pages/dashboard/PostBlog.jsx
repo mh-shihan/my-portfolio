@@ -231,6 +231,7 @@ const PostBlog = () => {
           <div className=" max-w-full overflow-x-hidden ">
             <MarkdownPreview
               source={blogContent}
+              className="wmde-markdown wmde-markdown-color wmde-markdown-dark"
               style={{
                 padding: 16,
                 overflow: "scroll",

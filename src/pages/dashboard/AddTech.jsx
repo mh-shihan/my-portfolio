@@ -57,7 +57,7 @@ const AddTech = () => {
             }
             value={formData.technology}
             placeholder="Enter Tech Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400"
             required
           />
         </div>
@@ -79,7 +79,7 @@ const AddTech = () => {
             }
             value={formData.description}
             placeholder="Enter Tech use case, e.g User Interface, Framework, Library etc"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white "
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400 "
             required
           />
         </div>
@@ -100,7 +100,7 @@ const AddTech = () => {
             }
             value={formData.photo_url}
             placeholder="Enter Tech use case, e.g User Interface, Framework, Library etc"
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-white "
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none text-gray-400 "
             required
           />
         </div>
