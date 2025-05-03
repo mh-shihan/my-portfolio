@@ -228,11 +228,12 @@ const PostBlog = () => {
           <h1 className="text-center text-2xl xl:text-xl font-bold xl:font-medium text-gray-800 ">
             Markdown Previewer
           </h1>
-          <div className=" max-w-full overflow-x-hidden ">
+          <div className=" max-w-full overflow-x-hidden">
             <MarkdownPreview
               source={blogContent}
-              className="wmde-markdown wmde-markdown-color wmde-markdown-dark"
               style={{
+                backgroundColor: "#0d1117", // GitHub dark background
+                color: "#c9d1d9",
                 padding: 16,
                 overflow: "scroll",
               }}

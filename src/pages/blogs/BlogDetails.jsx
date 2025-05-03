@@ -50,6 +50,8 @@ const BlogDetails = () => {
               <MarkdownPreview
                 source={blogContent}
                 style={{
+                  backgroundColor: "#0d1117", // GitHub dark background
+                  color: "#c9d1d9",
                   padding: 16,
                   overflow: "scroll",
                 }}
