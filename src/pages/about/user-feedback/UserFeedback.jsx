@@ -82,7 +82,7 @@ const UserFeedback = () => {
                 }
                 value={formData.name}
                 placeholder="Enter client name"
-                className="w-full px-4 py-2 border text-zinc-300 border-gray-300 rounded-none focus:outline-none"
+                className="w-full px-4 py-2 border text-gray-400 border-gray-300 rounded-none focus:outline-none"
                 required
               />
             </div>
@@ -104,7 +104,7 @@ const UserFeedback = () => {
                 }
                 value={formData.designation}
                 placeholder="Student, DU / CEO, MindSprint"
-                className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+                className="w-full px-4 py-2 border border-gray-300 text-gray-400 rounded-none focus:outline-none "
                 required
               />
             </div>
@@ -125,7 +125,7 @@ const UserFeedback = () => {
                   setFormData({ ...formData, review: e.target.value })
                 }
                 value={formData.review}
-                className="w-full px-4 py-2 border border-gray-300 rounded-none text-zinc-300 focus:outline-none"
+                className="w-full px-4 py-2  border border-gray-300 rounded-none text-gray-400 focus:outline-none"
                 rows="4"
                 required
               ></textarea>
