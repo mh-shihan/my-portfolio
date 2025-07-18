@@ -10,11 +10,11 @@ const AboutMe = () => {
         <div className="mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column - Profile Image */}
-            <div className="flex justify-center col-span-4">
+            <div className="flex justify-center col-span-8 lg:col-span-4 w-full">
               <img
                 src={aboutImg}
                 alt="Mahmudul Hasan Shihan"
-                className="w-full md:w-96 text-center rounded-lg mt-4 shadow-lg"
+                className="w-full max-w-full md:w-96 text-center rounded-lg mt-4 shadow-lg"
               />
             </div>
 
@@ -25,7 +25,7 @@ const AboutMe = () => {
               </h2>
 
               <p className="mt-4 text-gray-300 text-justify leading-relaxed">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="font-semibold">Mahmudul Hasan Shihan</span>, a
                 passionate web developer skilled in building responsive,
                 user-friendly, and modern websites. I specialize in front-end
