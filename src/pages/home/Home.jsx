@@ -8,7 +8,7 @@ import Technologies from "./Technologies";
 
 const Home = () => {
   return (
-    <div className="space-y-28">
+    <div className="space-y-0 lg:space-y-16">
       <Helmet>
         <title>Shihan&apos;s Portfolio | Home</title>
       </Helmet>
